@@ -22,7 +22,7 @@ module.exports = {
     ],
   },
   pwa: {
-    name: 'Covid self report',
+    name: 'covid-me-rerporto.mx',
     themeColor: '#172b4d',
     msTileColor: '#172b4d',
     appleMobileWebAppCapable: 'yes',
