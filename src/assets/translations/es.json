@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Autoreporte",
+    "title": "COVID-Me-Reporto.mx",
     "footer": {
       "support": "¡Gracias por apoyarnos!",
       "contact": "Pongámonos en contacto en cualquiera de estas plataformas",
@@ -47,7 +47,7 @@
     "contractedOfficialConfirmText": "¿Ha dado oficialmente positivo a {disease} por una institución médica reconocida?",
     "locationQuestion": "¿Dónde vive?",
     "locationPlaceholder": "Código postal",
-    "locationValidError": "Por favor, introduzca un número postal indio válido",
+    "locationValidError": "Por favor, introduzca un número postal válido",
     "send": "Enviar",
     "error": "Error",
     "errorDetails": "Se produjo un error al enviar sus datos",
@@ -71,7 +71,7 @@
   },
   "about": {
     "title": "Acerca de",
-    "headWho": "Somos un equipo de desarrolladores suizos",
+    "headWho": "Somos un equipo de desarrolladores",
     "who": "que quieren ayudar a evaluar la situación actual de la pandemia de COVID-19 en nuestro país.",
     "headNeedYou": "¡Te necesitamos!",
     "needYou": "Nuestra aplicación se basa en sus autoinformes... por lo que es importante que todos ustedes vengan a actualizar su estado de salud en caso de cambio",

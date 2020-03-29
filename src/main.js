@@ -47,7 +47,7 @@ import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
 const i18n = new VueI18n({
   locale: locale,
-  fallbackLocale: 'en',
+  fallbackLocale: 'es',
   messages: {
     en: require('./assets/translations/en.json'),
     de: require('./assets/translations/de.json'),

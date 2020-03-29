@@ -50,11 +50,11 @@
             <span class="nav-link-inner--text">Language</span>
           </a>
 
+          <a href="" class="dropdown-item" @click.prevent="setLocale('es')">Español</a>
+          <a href="" class="dropdown-item" @click.prevent="setLocale('en')">English</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('de')">Deutsch</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('fr')">Français</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('it')">Italiano</a>
-          <a href="" class="dropdown-item" @click.prevent="setLocale('es')">Español</a>
-          <a href="" class="dropdown-item" @click.prevent="setLocale('en')">English</a>
         </base-dropdown>
 
         <li v-if="socialLinkWhatsapp" class="nav-item">
