@@ -53,6 +53,7 @@
           <a href="" class="dropdown-item" @click.prevent="setLocale('de')">Deutsch</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('fr')">Français</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('it')">Italiano</a>
+          <a href="" class="dropdown-item" @click.prevent="setLocale('es')">Español</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('en')">English</a>
         </base-dropdown>
 

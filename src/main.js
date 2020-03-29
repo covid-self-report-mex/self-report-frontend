@@ -53,6 +53,7 @@ const i18n = new VueI18n({
     de: require('./assets/translations/de.json'),
     fr: require('./assets/translations/fr.json'),
     it: require('./assets/translations/it.json'),
+    es: require('./assets/translations/es.json'),
   },
 });
 
