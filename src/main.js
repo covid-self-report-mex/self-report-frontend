@@ -44,17 +44,36 @@ if (locale === null) {
 
 import VueI18n from 'vue-i18n';
 
+const configuredLanguages = ['es'];
+
+configuredLanguages.push('en');
+configuredLanguages.push('de');
+configuredLanguages.push('it');
+configuredLanguages.push('fr');
+
+const messages = {};
+const languages = [];
+for (let language of configuredLanguages) {
+  try {
+    messages[language] = require(`./assets/translations/${language}.json`);
+    if (messages[language].app.language) {
+      languages.push({
+        id: language,
+        label: messages[language].app.language,
+      });
+    }
+  } catch (error) {
+    console.error(`Could not load language '${language}': ${error}`)
+  }
+}
+
+Vue.prototype.languages = languages;
+
 Vue.use(VueI18n);
 const i18n = new VueI18n({
   locale: locale,
-  fallbackLocale: 'es',
-  messages: {
-    en: require('./assets/translations/en.json'),
-    de: require('./assets/translations/de.json'),
-    fr: require('./assets/translations/fr.json'),
-    it: require('./assets/translations/it.json'),
-    es: require('./assets/translations/es.json'),
-  },
+  fallbackLocale: 'en',
+  messages,
 });
 
 /* Captcha */

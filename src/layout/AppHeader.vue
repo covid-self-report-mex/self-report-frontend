@@ -49,7 +49,6 @@
             <i class="ni ni-bold-down"></i>
             <span class="nav-link-inner--text">Idioma/Language</span>
           </a>
-
           <a href="" class="dropdown-item" @click.prevent="setLocale('es')">Español</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('en')">English</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('de')">Deutsch</a>

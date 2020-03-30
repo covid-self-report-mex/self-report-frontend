@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.0.1] 2020-03-30
+
+### Fixed
+
+- Map locations display
+
+## [1.0.0] 2020-03-30
+
+### Changed
+
+- Changed dataset and geocoding data formats
+
+## [0.5.2] 2020-03-29
+
+### Added
+
+- Languages are now configurable
+
+## [0.5.1] 2020-03-29
+
+### Changed
+
+- Removing embedded geocoding source
+- Remove postal code strict verification
+
 ## [0.5.0] 2020-03-28
 
 ### Added
