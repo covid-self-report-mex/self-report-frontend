@@ -164,12 +164,8 @@
             <div class="row mt-3" v-show="reportData.sick !== null">
               <div class="col-lg-6">
                 <h3 class="text-white">{{ $t('report.locationQuestion') }}</h3>
-                <base-input v-model="reportData.postalCode"
-                            type="number"
-                            :placeholder="$t('report.locationPlaceholder')"
-                            :error="postalCodeCheck && !validPostalCode ? $t('report.locationValidError') : ''"
-                            @focusout="postalCodeCheck = true"
-                            :valid="!postalCodeCheck ? null : validPostalCode"></base-input>
+                <postal-code-selector @input="reportData.postalCode = $event"
+                                      :levels="3"></postal-code-selector>
               </div>
             </div>
 
@@ -321,7 +317,8 @@
     },
     computed: {
       validPostalCode: function () {
-        return (this.reportData.postalCode.length === 4 && !isNaN(this.reportData.postalCode) && geocoding[+this.reportData.postalCode]);
+        return this.reportData.postalCode ? true : false
+        //return (this.reportData.postalCode.length === 5 && !isNaN(this.reportData.postalCode) && geocoding[+this.reportData.postalCode]);
       },
       daysSinceLastReport: function () {
 
