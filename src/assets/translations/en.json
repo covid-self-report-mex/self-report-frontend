@@ -1,14 +1,17 @@
 {
     "app": {
-        "language":"English",
         "title": "Self report",
         "footer": {
             "support": "Thank you for supporting us!",
             "contact": "Let's get in touch on any of these platforms.",
-            "whatsappshare": "Report your health status to help fighting against the Covid-19!"
+            "whatsappshare": "Report your health status to help fighting against the Covid-19!",
+            "ch": "Switzerland",
+            "in": "India",
+            "me": "Mexico"
         },
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "language": "English"
     },
     "renewReport": {
         "comingBack": "Thanks for coming back",
@@ -24,7 +27,7 @@
         "how": "How are you doing?",
         "healthy": "I'm healthy",
         "sick": "I'm sick",
-        "contract": "Did you contract {disease} and recovered?",
+        "contract": "Did you contract Covid-19 and recovered?",
         "contractNo": "No",
         "contractYesRecovered": "Yes and I recovered",
         "notSick": "Great! Stay at home even if you're not sick to avoid propagation.",
@@ -39,13 +42,13 @@
         "symptomDiarrhoea": "Diarrhea",
         "symptomTasteSmell": "Taste / smell disorder",
         "symptomOthers": "Others",
-        "diagnostic": "What is the diagnostic?",
-        "contracted": "Regarding your recent social contacts, do you think you contracted {disease}?",
+        "diagnostic": "Do you have COVID-19?",
+        "contracted": "Regarding your recent social contacts, do you think you contracted Covid-19?",
         "contractedNo": "No",
         "contractedProbably": "Probably",
         "contractedOfficial": "It's official",
         "contractedOfficialConfirm": "Please confirm",
-        "contractedOfficialConfirmText": "Have you been officially tested positive to {disease} by a recognized medical institution?",
+        "contractedOfficialConfirmText": "Have you been officially tested positive to Covid-19 by a recognized medical institution?",
         "locationQuestion": "Where do you live?",
         "locationPlaceholder": "Postal code",
         "locationValidError": "Please enter a valid Swiss postal number",
@@ -71,17 +74,17 @@
         "layerRecoveredConfirmed": "Recovered (tested)"
     },
     "about": {
-        "title": "About",
+        "title": "About us",
         "headWho": "We are a team of swiss developers",
         "who": "that want to help to evaluate the current situation of the COVID-19 pandemic in our country.",
         "headNeedYou": "We need you!",
-        "needYou": "Our app is based on your self-reporting... it is important that you update your health status in case of change.",
+        "needYou": "Our app is based on your self-reporting... so it is important that you update your health status in case of change.",
         "headData": "We don’t save any personal information in our servers!",
         "data": "Every data is anonymous but to keep our datasets consistent, we need that you always use the same browser to update your status (otherwise you will be counted twice).",
-        "headDataUpdate": "Realtime, well...no!",
-        "dataUpdate": "Realtime, well...no! We will update the numbers as frequently as we can. But, you will need to wait a bit especially during the beginning phase of the app.",
-        "headPublicData": "For the other developers,",
-        "publicData": "our dataset is public and open in our github. Please use it to make your own awesome visualization.",
+        "headDataUpdate": "Realtime, well...not yet!",
+        "dataUpdate": "We will update the numbers as frequently as we can. But, you will need to wait a bit especially during the beginning phase of the app.",
+        "headPublicData": "For other developers,",
+        "publicData": "our dataset is public and open in our github. Please use it to make your own awesome visualization, or join our effort to open up in other countries",
         "headDataCare": "By the way,",
         "dataCare": " keep in mind that our dataset is based on self-reporting from the community, thus the data is not official and could contains errors. The data is only intended to be used as an indicator.",
         "headImprovement": "If you have any suggestions",
@@ -90,7 +93,7 @@
     "faq": {
         "title": "FAQ",
         "goalQuestion": "What is the goal of this app?",
-        "goalResponse": "We aim to provide a visualization of the progression of the {disease} pandemic in our country. How can we 'flatten the curve' without having a statistical idea of the current situation? Help us by publishing your health status.",
+        "goalResponse": "We aim to provide a visualization of the progression of the Covid-19 pandemic in our country. How can we 'flatten the curve' without having a statistical idea of the current situation? Help us by publishing your health status.",
         "othersQuestion": "How do I report other members of my family?",
         "othersResponse": "We are working on this issue. For now, you can use a different devices (phones, tablet, computer) for each member of your family."
     }
