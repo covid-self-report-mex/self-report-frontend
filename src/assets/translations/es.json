@@ -18,7 +18,7 @@
     "ifNotYou": "si no fueras tu."
   },
   "report": {
-    "title": "Reporte",
+    "title": "Reportar",
     "intro": "Ayude a evitar contagios del nuevo Coronavirus en México informando sobre su estado de salud anónimamente.",
     "how": "¿Cómo se siente usted?",
     "healthy": "Me siento sano",
@@ -60,7 +60,8 @@
     "officialInformation": "Haga CLICK AQUÍ, para obtener información oficial"
   },
   "visualize": {
-    "title": "Visualizar",
+    "title": "Ver Mapa",
+    "map": "Mapa",
     "dataWarning": "Esta información NO es OFICIAL y se basa en reportes voluntarios directos de la población no verificados.",
     "lastUpdate": "Última actualización:",
     "layerHealthy": "Sano",

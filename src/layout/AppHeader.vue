@@ -16,7 +16,6 @@
 
 
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-
         <li class="nav-item">
           <router-link class="nav-link" to="/">
             {{ $t('report.title') }}
@@ -25,7 +24,13 @@
 
         <li class="nav-item">
           <router-link class="nav-link" to="/visualize">
-            {{ $t('visualize.title') }}
+            <button type="button" class="btn btn-info btn-sm d-md-none d-lg-inline">
+              <i class="fa fa-map"></i> 
+              {{ $t('visualize.title') }}
+            </button>
+            <span class="d-md-inline d-lg-none">
+              {{ $t('visualize.title') }}
+            </span>
           </router-link>
         </li>
         <li class="nav-item">
@@ -47,7 +52,9 @@
         <base-dropdown tag="li" class="nav-item">
           <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-bold-down"></i>
-            <span class="nav-link-inner--text">Idioma/Language</span>
+            <span class="nav-link-inner--text">
+              <i class="fa fa-language"></i>Idioma
+            </span>
           </a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('es')">Español</a>
           <a href="" class="dropdown-item" @click.prevent="setLocale('en')">English</a>
@@ -90,7 +97,6 @@
           </a>
         </li>
       </ul>
-
     </base-nav>
   </header>
 </template>

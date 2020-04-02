@@ -61,6 +61,7 @@
   },
   "visualize": {
     "title": "Visualize",
+    "map": "Map",
     "dataWarning": "This information is NOT OFFICIAL and is based on unverified direct voluntary reports from the population.",
     "lastUpdate": "Last update:",
     "layerHealthy": "Healthy",

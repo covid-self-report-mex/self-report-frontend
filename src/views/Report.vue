@@ -1,14 +1,13 @@
 <template>
   <div>
-
     <div class="position-relative">
       <!-- shape Hero -->
       <section class="section-shaped my-0">
-        <div class="shape shape-style-1 shape-default shape-skew">
+        <div class="shape shape-style-2 shape-default shape-skew">
           <span></span>
           <span></span>
         </div>
-        <div class="container shape-container d-flex">
+        <div class="container shape-container d-flex" style="top: -5rem">
 
           <div v-if="daysSinceLastReport === null || daysSinceLastReport > 0 || forceReportAgain"
                class="col px-0">
@@ -25,14 +24,17 @@
               </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row mt-0">
               <div class="col-lg-9">
-
+                <a href="/visualize"> 
+                  <button type="button" class="btn btn-info btn-block  d-lg-none d-md-inline mb-4">
+                  <i class="fa fa-map"></i> 
+                  {{ $t('visualize.title') }}
+                  </button>
+                </a>
                 <p class="text-white">{{ $t('report.intro') }}</p>
 
-                <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>
-
-                <p class="text-white">{{ $t(`faq.goalResponseExtended`) }}</p>
+                <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>          
 
                 <h1 class="display-3 text-white">{{ $t('report.how') }}</h1>
 
@@ -191,6 +193,7 @@
 
             <div class="row mt-3">
               <div class="col-lg-6">
+                <p class="text-white">{{ $t(`faq.goalResponseExtended`) }}</p>
                 <p class="text-white small"> {{ $t('about.headData') }}</p>
                 <p class="text-white" v-if="reportData.sick !== null">{{ $t('about.data') }}</p>
                 <p class="text-white">
