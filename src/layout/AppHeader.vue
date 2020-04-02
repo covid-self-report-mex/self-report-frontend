@@ -2,12 +2,12 @@
   <header class="header-global">
     <base-nav class="navbar-main" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-        <img src="img/brand/logo_alpha.png" alt="logo"> Self-report
+        <img src="img/brand/logo_alpha.png" alt="logo"> {{ $t('app.title') }}
       </router-link>
 
       <div class="row" slot="content-header" slot-scope="{closeMenu}">
         <div class="col-8 collapse-brand">
-          <img src="img/brand/logo_white_app.png" alt="logo"> Self-report
+          <img src="img/brand/logo_white_app.png" alt="logo"> {{ $t('app.title') }}
         </div>
         <div class="col-4 collapse-close">
           <close-button @click="closeMenu"></close-button>
@@ -47,10 +47,10 @@
         <base-dropdown tag="li" class="nav-item">
           <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-bold-down"></i>
-            <span class="nav-link-inner--text">Language</span>
+            <span class="nav-link-inner--text">Idioma/Language</span>
           </a>
-          <a v-for="language of languages" v-bind:key="language.id" href="" class="dropdown-item"
-             @click.prevent="setLocale(language.id)">{{ language.label }}</a>
+          <a href="" class="dropdown-item" @click.prevent="setLocale('es')">Español</a>
+          <a href="" class="dropdown-item" @click.prevent="setLocale('en')">English</a>
         </base-dropdown>
 
         <li v-if="socialLinkWhatsapp" class="nav-item">
@@ -123,3 +123,4 @@
     width: 24px !important;
   }
 </style>
+

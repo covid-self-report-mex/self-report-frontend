@@ -19,7 +19,9 @@
 
             <h1 class="display-3 text-white">{{ $t('visualize.title') }}</h1>
 
-            <p>{{ $t('visualize.dataWarning') }}</p>
+            <p>
+              {{ $t('visualize.dataWarning') }}
+            </p>
 
             <base-input addon-left-icon="ni ni-calendar-grid-58">
               <flat-picker v-if="dataLoaded"
@@ -88,10 +90,6 @@
         geocoding: null,
         lastUpdate: null,
 
-        mapCenterLatitude: process.env.VUE_APP_VISU_MAP_CENTER_LATITUDE,
-        mapCenterLongitude: process.env.VUE_APP_VISU_MAP_CENTER_LONGITUDE,
-        mapCenterZoomLevel: process.env.VUE_APP_VISU_MAP_ZOOM_LEVEL,
-
         dateFilter: _today.toISOString().split('T')[0],
         allowedDates: [],
         datePickerFormat: {
@@ -116,7 +114,7 @@
             color: 'blue',
             buttonColor: 'info',
             opacity: 0.2,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
           {
             id: 'sick_guess_no_corona',
@@ -126,7 +124,7 @@
             color: 'blue',
             buttonColor: 'info',
             opacity: 0.1,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
           {
             id: 'sick_guess_corona',
@@ -156,7 +154,7 @@
             color: 'green',
             buttonColor: 'success',
             opacity: 0.3,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
           {
             id: 'recovered_confirmed',
@@ -166,7 +164,7 @@
             color: 'green',
             buttonColor: 'success',
             opacity: 0.3,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
         ],
       };
@@ -177,30 +175,6 @@
         this.geocoding = await this.loadGeocode(this.geocodeFileUrl);
       } catch (error) {
         this.error = error;
-      }
-
-      const reportDataString = localStorage.getItem('report-data');
-      if (reportDataString) {
-
-        const reportData = JSON.parse(reportDataString);
-        try {
-          this.mapCenterLatitude = this.geocoding[reportData.postalCode].latitude;
-          this.mapCenterLongitude = this.geocoding[reportData.postalCode].longitude;
-
-          if (process.env.VUE_APP_REVERSE_GEO_LAT_LNG) {
-            this.mapCenterLatitude = this.geocoding[reportData.postalCode].longitude;
-            this.mapCenterLongitude = this.geocoding[reportData.postalCode].latitude;
-          }
-
-          if (process.env.VUE_APP_VISU_MAP_ZOOM_LEVEL_LOCAL) {
-            this.mapCenterZoomLevel = process.env.VUE_APP_VISU_MAP_ZOOM_LEVEL_LOCAL;
-          } else {
-            this.mapCenterZoomLevel = +process.env.VUE_APP_VISU_MAP_ZOOM_LEVEL + 2;
-          }
-        } catch (error) {
-
-        }
-
       }
 
       try {
@@ -262,10 +236,6 @@
 
                 if (location.longitude && location.latitude) {
                   location.coordinates = [+location.latitude, +location.longitude];
-
-                  if (process.env.VUE_APP_REVERSE_GEO_LAT_LNG) {
-                    location.coordinates = [+location.longitude, +location.latitude];
-                  }
                 } else {
                   continue;
                 }
@@ -340,32 +310,18 @@
       },
       loadLeaflet: async function () {
 
-        console.log(this.mapCenterLatitude);
-        console.log(this.mapCenterLongitude);
-        console.log(this.mapCenterZoomLevel);
-
         _map = L.map('leaflet-map', {
           preferCanvas: true,
         }).setView([
-          this.mapCenterLatitude,
-          this.mapCenterLongitude
-        ], this.mapCenterZoomLevel);
+          process.env.VUE_APP_VISU_MAP_CENTER_LATITUDE,
+          process.env.VUE_APP_VISU_MAP_CENTER_LONGITUDE
+        ], process.env.VUE_APP_VISU_MAP_ZOOM_LEVEL);
 
         _tileLayers.push(L.tileLayer(this.mapBaseLayerUrl, {
           attribution: `&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors`,
         }).addTo(_map));
 
-        console.log(`Loading dataset from ${this.dataSourceUrl}`);
         _data = await this.loadData(this.dataSourceUrl);
-
-        while (!_data.reverse().some(l => l.date === this.dateFilter)) {
-          const previousDay = new Date(this.dateFilter);
-          previousDay.setDate(previousDay.getDate() - 1);
-          const previousDayString = previousDay.toISOString().split('T')[0];
-          console.log(`No data for ${this.dateFilter}, fallback to ${previousDayString}`);
-          this.dateFilter = previousDayString;
-        }
-
         this.dataLoaded = true;
 
         this.allowedDates = this.computeAllowedDates(_data);

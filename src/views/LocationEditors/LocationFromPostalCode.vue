@@ -24,19 +24,12 @@
         enableCheck: false,
       }
     },
-    mounted() {
-      this.$emit('update:valid', this.isValid(this.location));
-    },
     methods: {
       locationChanged(value) {
         this.$emit('update:location', value);
       },
       isValid(value) {
-        if (this.location === null) {
-          return false;
-        }
-
-        return value.length === 4 && !isNaN(value);
+        return value.length === 5 && !isNaN(value);
       },
     },
     watch: {
