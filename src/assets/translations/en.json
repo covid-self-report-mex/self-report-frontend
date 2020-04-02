@@ -4,7 +4,7 @@
     "footer": {
       "support": "Thank you for supporting us!",
       "contact": "Let's get in touch on any of these platforms.",
-      "whatsappshare": "Report your health status to help fighting against the Covid-19!"
+      "whatsappshare": "Report your health status to help fighting against the COVID-19!"
     },
     "yes": "Yes",
     "no": "No"
@@ -19,7 +19,7 @@
   },
   "report": {
     "title": "Report",
-    "intro": "Help fighting against the new Coronavirus in Mexico by self-reporting your health status.",
+    "intro": "Help prevent the spread of the new Coronavirus in Mexico by reporting your health status anonymously.",
     "how": "How are you doing?",
     "healthy": "I'm healthy",
     "sick": "I'm sick",
@@ -56,16 +56,18 @@
     "sentComeBack": "Thank you for your contribution. Please come back if your health status changes.",
     "sentSomeoneElse": "If you want to report for someone else, please use another phone, tablet or computer.",
     "sentMistake": "You've made a mistake ? You can make a correction : ",
-    "sentMistakeClickHere": "click here"
+    "sentMistakeClickHere": "click here",
+    "officialInformation": "CLICK HERE, for official information"
   },
   "visualize": {
     "title": "Visualize",
-    "dataWarning": "The following data is community collected and not verified.",
+    "map": "Map",
+    "dataWarning": "This information is NOT OFFICIAL and is based on unverified direct voluntary reports from the population.",
     "lastUpdate": "Last update:",
     "layerHealthy": "Healthy",
     "layerSickNoCovid": "Other diseases",
-    "layerSickCovid": "Covid-19 (probable)",
-    "layerSickCovidConfirmed": "Covid-19 (tested)",
+    "layerSickCovid": "COVID-19 (probable)",
+    "layerSickCovidConfirmed": "COVID-19 (tested)",
     "layerRecovered": "Recovered",
     "layerRecoveredConfirmed": "Recovered (tested)"
   },
@@ -75,7 +77,7 @@
     "who": "that want to help to evaluate the current situation of the COVID-19 pandemia in our country.",
     "headNeedYou": "We need you!",
     "needYou": "Our app is based on your self-reporting...so that important that all of you come to update your health status in case of change.",
-    "headData": "We don’t save any personal information in our servers!",
+    "headData": "This information is NOT OFFICIAL and is based on direct voluntary reports from the population. We trust that you will honestly report your health status, to generate the most accurate visualization possible. We do not store any personal information on our servers!",
     "data": "Every data is anonymous but to keep our datasets consistent, we need that you use always the same browser to update your status (otherwise you will be counted twice).",
     "headDataUpdate": "Realtime, well...no!",
     "dataUpdate": "Realtime, well...no! We will provide update of the numbers as frequently as we can. But, you will need to wait a bit especially during the beginning phase of the app.",
@@ -89,7 +91,8 @@
   "faq": {
     "title": "FAQ",
     "goalQuestion": "What is the goal of this app?",
-    "goalResponse": "We aim to provide a visualization of the progression of the {disease} pandemic in our country. How can we 'flatten the curve' without having a statistical idea of the current situation? Help us by publishing your health status.",
+    "goalResponse": "The way to fight COVID-19 is to flatten the infection curve, this application is a support to the Government and the Population to have a quick visualization of the advance of the pandemic in our country.",
+    "goalResponseExtended": "It is a challenge for all countries to maintain real-time information, so we have joined a global initiative to provide this application. ",
     "othersQuestion": "How do I report other members of my family?",
     "othersResponse": "We are working on this issue. For now, you can use a different devices (phones, tablet, computer) for each member of your family."
   }

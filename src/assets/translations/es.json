@@ -3,23 +3,23 @@
     "title": "COVID-Me-Reporto.mx",
     "footer": {
       "support": "¡Gracias por apoyarnos!",
-      "contact": "Pongámonos en contacto en cualquiera de estas plataformas",
-      "whatsappshare": "¡Informe sobre su estado de salud para ayudar en la lucha contra el Covid-19!"
+      "contact": "Contáctanos a través de cualquiera de estas plataformas.",
+      "whatsappshare": "Reporta tu estado de salud para ayudar a luchar contra el COVID-19!"
     },
     "yes": "Sí",
     "no": "No"
   },
   "renewReport": {
-    "comingBack": "Gracias por volver",
-    "daysSince": "Han pasado {days} días desde su último informe",
-    "explainOther": "Si quiere reportar otra persona, por favor use otro teléfono, tableta o computadora.",
-    "click": "Haga clic",
+    "comingBack": "Gracias por regresar.",
+    "daysSince": "Han pasado {days} días desde tu último reporte.",
+    "explainOther": "Si deseas reportar a otra persona, por favor usa otro celular, tableta o computadora.",
+    "click": "Clic",
     "here": "aquí",
-    "ifNotYou": "si no fueras tú"
+    "ifNotYou": "si no fueras tu."
   },
   "report": {
-    "title": "Reporte",
-    "intro": "Ayude a combatir el nuevo Coronavirus en México informando sobre su estado de salud",
+    "title": "Reportar",
+    "intro": "Ayude a evitar contagios del nuevo Coronavirus en México informando sobre su estado de salud anónimamente.",
     "how": "¿Cómo se siente usted?",
     "healthy": "Me siento sano",
     "sick": "Me siento enfermo",
@@ -42,7 +42,7 @@
     "contracted": "En cuanto a sus contactos sociales recientes, ¿cree que contrajo {disease}?",
     "contractedNo": "No",
     "contractedProbably": "Probablemente",
-    "contractedOfficial": "Es oficial",
+    "contractedOfficial": "Confirmado",
     "contractedOfficialConfirm": "Por favor, confirme",
     "contractedOfficialConfirmText": "¿Ha dado oficialmente positivo a {disease} por una institución médica reconocida?",
     "locationQuestion": "¿Dónde vive?",
@@ -56,18 +56,20 @@
     "sentComeBack": "Gracias por su contribución. Por favor, vuelva si su estado de salud cambia",
     "sentSomeoneElse": "Si quiere reportarse para otra persona, por favor use otro teléfono, tableta o computadora",
     "sentMistake": "¿Ha cometido un error? Puede hacer una corrección: ",
-    "sentMistakeClickHere": "haga clic aquí"
+    "sentMistakeClickHere": "haga clic aquí",
+    "officialInformation": "Haga CLICK AQUÍ, para obtener información oficial"
   },
   "visualize": {
-    "title": "Visualizar",
-    "dataWarning": "Los siguientes datos son recopilados por la comunidad y no son verificados",
+    "title": "Ver Mapa",
+    "map": "Mapa",
+    "dataWarning": "Esta información NO es OFICIAL y se basa en reportes voluntarios directos de la población no verificados.",
     "lastUpdate": "Última actualización:",
     "layerHealthy": "Sano",
     "layerSickNoCovid": "Otras enfermedades",
-    "layerSickCovid": "Covid-19 (probable)",
-    "layerSickCovidConfirmed": "Covid-19 (oficial)",
+    "layerSickCovid": "COVID-19 (prob.)",
+    "layerSickCovidConfirmed": "COVID-19 (conf.)",
     "layerRecovered": "Recuperado",
-    "layerRecoveredConfirmed": "Recuperado (oficial)"
+    "layerRecoveredConfirmed": "Recuperado (conf.)"
   },
   "about": {
     "title": "Acerca de",
@@ -75,7 +77,7 @@
     "who": "que quieren ayudar a evaluar la situación actual de la pandemia de COVID-19 en nuestro país.",
     "headNeedYou": "¡Te necesitamos!",
     "needYou": "Nuestra aplicación se basa en sus autoinformes... por lo que es importante que todos ustedes vengan a actualizar su estado de salud en caso de cambio",
-    "headData": "¡No guardamos ninguna información personal en nuestros servidores!",
+    "headData": "Esta información NO es OFICIAL y se basa en reportes voluntarios directos de la población. Confiamos en que Usted reporte honestamente su estado de salud, para generar una visualización lo más apegada a la realidad. ¡No guardamos ninguna información personal en nuestros servidores!",
     "data":"Todos los datos son anónimos pero para mantener nuestros conjuntos de datos consistentes, necesitamos que usen siempre el mismo navegador para actualizar su estado (de lo contrario serán contados dos veces)",
     "headDataUpdate": "Tiempo real, bueno...no!",
     "dataUpdate": "Tiempo real, bueno...no! Proporcionaremos la actualización de los números tan frecuentemente como podamos. Pero, tendrás que esperar un poco, especialmente durante la fase de inicio de la aplicación.",
@@ -89,7 +91,8 @@
   "faq": {
     "title": "FAQ",
     "goalQuestion": "¿Cuál es el objetivo de esta aplicación?",
-    "goalResponse": "Nuestro objetivo es proporcionar una visualización de la progresión de la pandemia {disease} en nuestro país. ¿Cómo podemos 'aplanar la curva sin tener una idea estadística de la situación actual? Ayúdenos publicando su estado de salud",
+    "goalResponse": "La forma de combatir el COVID-19 es aplanando la curva de contagios, esta aplicación es un apoyo al Gobierno y a la Población para tener una rápida visualización del avance de la pandemia en nuestro país.",
+    "goalResponseExtended": "Para todos los países es un reto mantener información en tiempo real, por eso nos hemos unido a una iniciativa mundial para proveer esta aplicación. ",
     "othersQuestion": "¿Cómo informo a otros miembros de mi familia?",
     "othersResponse": "Estamos trabajando en este tema. Por ahora, puedes usar un dispositivo diferente (teléfonos, tabletas, computadoras) para cada miembro de tu familia"
   }

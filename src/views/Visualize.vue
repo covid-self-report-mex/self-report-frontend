@@ -4,11 +4,11 @@
     <div class="position-relative">
       <!-- shape Hero -->
       <section class="section-shaped my-0">
-        <div class="shape shape-style-1 shape-default shape-skew">
+        <div class="shape shape-style-2 shape-default shape-skew">
           <span></span>
           <span></span>
         </div>
-        <div class="container shape-container d-flex">
+        <div class="container shape-container d-flex" style="top: -6rem">
 
           <div class="col text-white">
 
@@ -17,9 +17,11 @@
               <p v-html="error"></p>
             </base-alert>
 
-            <h1 class="display-3 text-white">{{ $t('visualize.title') }}</h1>
+            <h1 class="display-4 text-white">{{ $t('visualize.map') }}</h1>
 
-            <p>{{ $t('visualize.dataWarning') }}</p>
+            <p>
+              {{ $t('visualize.dataWarning') }}
+            </p>
 
             <base-input addon-left-icon="ni ni-calendar-grid-58">
               <flat-picker v-if="dataLoaded"
@@ -112,7 +114,7 @@
             color: 'blue',
             buttonColor: 'info',
             opacity: 0.2,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
           {
             id: 'sick_guess_no_corona',
@@ -122,7 +124,7 @@
             color: 'blue',
             buttonColor: 'info',
             opacity: 0.1,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
           {
             id: 'sick_guess_corona',
@@ -152,7 +154,7 @@
             color: 'green',
             buttonColor: 'success',
             opacity: 0.3,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
           {
             id: 'recovered_confirmed',
@@ -162,7 +164,7 @@
             color: 'green',
             buttonColor: 'success',
             opacity: 0.3,
-            defaultEnabled: false,
+            defaultEnabled: true,
           },
         ],
       };
@@ -233,7 +235,7 @@
                 }
 
                 if (location.longitude && location.latitude) {
-                  location.coordinates = [+location.longitude, +location.latitude];
+                  location.coordinates = [+location.latitude, +location.longitude];
                 } else {
                   continue;
                 }

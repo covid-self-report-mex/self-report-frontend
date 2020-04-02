@@ -1,14 +1,13 @@
 <template>
   <div>
-
     <div class="position-relative">
       <!-- shape Hero -->
       <section class="section-shaped my-0">
-        <div class="shape shape-style-1 shape-default shape-skew">
+        <div class="shape shape-style-2 shape-default shape-skew">
           <span></span>
           <span></span>
         </div>
-        <div class="container shape-container d-flex">
+        <div class="container shape-container d-flex" style="top: -5rem">
 
           <div v-if="daysSinceLastReport === null || daysSinceLastReport > 0 || forceReportAgain"
                class="col px-0">
@@ -25,12 +24,17 @@
               </div>
             </div>
 
-            <div class="row mt-3">
-              <div class="col-lg-6">
-
+            <div class="row mt-0">
+              <div class="col-lg-9">
+                <a href="/visualize"> 
+                  <button type="button" class="btn btn-info btn-block  d-lg-none d-md-inline mb-4">
+                  <i class="fa fa-map"></i> 
+                  {{ $t('visualize.title') }}
+                  </button>
+                </a>
                 <p class="text-white">{{ $t('report.intro') }}</p>
 
-                <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>
+                <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>          
 
                 <h1 class="display-3 text-white">{{ $t('report.how') }}</h1>
 
@@ -164,19 +168,21 @@
             <div class="row mt-3" v-show="reportData.sick !== null">
               <div class="col-lg-6">
                 <h3 class="text-white">{{ $t('report.locationQuestion') }}</h3>
-                <base-input v-model="reportData.postalCode"
-                            type="number"
-                            :placeholder="$t('report.locationPlaceholder')"
-                            :error="postalCodeCheck && !validPostalCode ? $t('report.locationValidError') : ''"
-                            @focusout="postalCodeCheck = true"
-                            :valid="!postalCodeCheck ? null : validPostalCode"></base-input>
+
+                <location-from-address v-if="locationSelector === 'address'"
+                                       :location.sync="reportData.postalCode"
+                                       :valid.sync="validLocation"></location-from-address>
+
+                <location-from-postal-code v-else
+                                           :location.sync="reportData.postalCode"
+                                           :valid.sync="validLocation"></location-from-postal-code>
               </div>
             </div>
 
             <div class="row mt-3" v-show="reportData.sick !== null">
               <div class="col-lg-6">
                 <base-button @click="send"
-                             :disabled="!validPostalCode || reportData.diagnostic === null"
+                             :disabled="!validLocation || reportData.diagnostic === null"
                              class="mb-3 mb-sm-0"
                              type="white"
                              icon="fa fa-send">
@@ -187,8 +193,18 @@
 
             <div class="row mt-3">
               <div class="col-lg-6">
-                <p class="text-white headline"> {{ $t('about.headData') }}</p>
+                <p class="text-white">{{ $t(`faq.goalResponseExtended`) }}</p>
+                <p class="text-white small"> {{ $t('about.headData') }}</p>
                 <p class="text-white" v-if="reportData.sick !== null">{{ $t('about.data') }}</p>
+                <p class="text-white">
+                  <a v-if="socialLinkWHO"
+                     class="text-white"
+                     :href="socialLinkWHO"
+                     target="_blank" rel="noopener"
+                     data-toggle="tooltip" title="Official Information">
+                    {{ $t('report.officialInformation') }}
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -244,10 +260,14 @@
 
   import Modal from '@/components/Modal.vue';
   import newGithubIssueUrl from 'new-github-issue-url';
+  import LocationFromPostalCode from "./LocationEditors/LocationFromPostalCode";
+  import LocationFromAddress from "./LocationEditors/LocationFromAddress";
 
   export default {
     name: "report",
     components: {
+      LocationFromAddress,
+      LocationFromPostalCode,
       Modal
     },
     async mounted() {
@@ -291,15 +311,17 @@
         healthyOfficialConfirmModal: false,
         sendErrorModal: false,
         sendError: '',
-        postalCodeCheck: false,
         forceReportAgain: false,
+
+        locationSelector: process.env.VUE_APP_REPORT_LOCATION_SELECTOR,
+        validLocation: false,
 
         reportData: {
           sessionId: null,
           sick: null,
           symptoms: [],
           diagnostic: null,
-          postalCode: '',
+          postalCode: null,
           lastReport: null,
         },
         sending: false,
@@ -315,9 +337,6 @@
       }
     },
     computed: {
-      validPostalCode: function () {
-        return (this.reportData.postalCode.length === 4 && !isNaN(this.reportData.postalCode));
-      },
       daysSinceLastReport: function () {
 
         if (this.reportData.lastReport === null) {
@@ -417,7 +436,7 @@
       githubIssue: async function () {
         const url = newGithubIssueUrl({
           user: process.env.VUE_APP_GITHUB_REPO_OWNER,
-          repo:  process.env.VUE_APP_GITHUB_REPO_NAME,
+          repo: process.env.VUE_APP_GITHUB_REPO_NAME,
           title: 'Error when sending from the front-end',
           body: `The error is:\n> ${this.sendError}\n\n---\nAuto-generated from the front-end`
         });

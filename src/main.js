@@ -27,6 +27,7 @@ Vue.prototype.socialLinkWhatsapp = process.env.VUE_APP_SOCIAL_WHATSAPP;
 Vue.prototype.socialLinkGithub = process.env.VUE_APP_SOCIAL_GITHUB;
 Vue.prototype.socialLinkInstagram = process.env.VUE_APP_SOCIAL_INSTAGRAM;
 Vue.prototype.socialLinkFacebook = process.env.VUE_APP_SOCIAL_FACEBOOK;
+Vue.prototype.socialLinkWHO = process.env.VUE_APP_WHO;
 
 /* Theme */
 import Argon from "./plugins/argon-kit";
@@ -47,9 +48,6 @@ import VueI18n from 'vue-i18n';
 const configuredLanguages = ['es'];
 
 configuredLanguages.push('en');
-configuredLanguages.push('de');
-configuredLanguages.push('it');
-configuredLanguages.push('fr');
 
 const messages = {};
 const languages = [];
