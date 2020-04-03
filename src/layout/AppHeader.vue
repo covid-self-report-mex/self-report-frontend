@@ -15,16 +15,16 @@
       </div>
 
 
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-        <li class="nav-item">
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center" slot-scope="{closeMenu}">
+        <li class="nav-item" @click="closeMenu">
           <router-link class="nav-link" to="/">
             {{ $t('report.title') }}
           </router-link>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item"  @click="closeMenu">
           <router-link class="nav-link" to="/visualize">
-            <button type="button" class="btn btn-info btn-sm d-sm-none d-lg-inline">
+            <button type="button" class="btn btn-info btn-sm d-none d-lg-inline">
               <i class="fa fa-map"></i> 
               {{ $t('visualize.title') }}
             </button>
@@ -33,21 +33,17 @@
             </span>
           </router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" @click="closeMenu">
           <router-link class="nav-link" to="/faq">
             {{ $t('faq.title') }}
           </router-link>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" @click="closeMenu">
           <router-link class="nav-link" to="/about">
             {{ $t('about.title') }}
           </router-link>
         </li>
-
-      </ul>
-
-      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
 
         <base-dropdown tag="li" class="nav-item">
           <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
