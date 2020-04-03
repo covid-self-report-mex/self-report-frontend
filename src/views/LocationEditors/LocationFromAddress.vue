@@ -98,6 +98,16 @@
           for (let i = 0; i < level; i++) {
               res = res[this.selectedOptions[i]]
           }
+          
+          //Sort last level
+          if (level == 2) {
+            const ordered = {};
+            Object.keys(res).sort().forEach(function(key) {
+              ordered[key] = res[key];
+            });
+            return [null, ...Object.keys(ordered)]
+          }
+
           return [null, ...Object.keys(res)]
       },
 
@@ -115,7 +125,7 @@
           this.postalCode = this.postalCode[this.selectedOptions[1]]
           res = this.postalCode
         }
-        console.log(res)
+        console.log(res);
         this.locationChanged(res, true)
         return res
       },
