@@ -34,9 +34,9 @@
     "symptomDyspnea": "Dificultad respiratoria",
     "symptomWeakness": "Debilidad",
     "symptomHeadache": "Dolor de cabeza",
-    "symptomCold": "Resfriado",
+    "symptomCold": "Catarro",
     "symptomDiarrhoea": "Diarrea",
-    "symptomTasteSmell": "Desorden del gusto / olfato",
+    "symptomTasteSmell": "Disminución del gusto ú olfato",
     "symptomOthers": "Otros",
     "diagnostic": "¿Cuál es el diagnóstico?",
     "contracted": "En cuanto a sus contactos sociales recientes, ¿cree que contrajo {disease}?",
@@ -65,11 +65,11 @@
     "dataWarning": "Esta información NO es OFICIAL y se basa en reportes voluntarios directos de la población no verificados.",
     "lastUpdate": "Última actualización:",
     "layerHealthy": "Sano",
-    "layerSickNoCovid": "Otras enfermedades",
-    "layerSickCovid": "COVID-19 (prob.)",
-    "layerSickCovidConfirmed": "COVID-19 (conf.)",
+    "layerSickNoCovid": "Otra enfermedad",
+    "layerSickCovid": "COVID-19 (probable)",
+    "layerSickCovidConfirmed": "COVID-19 (confirmado)",
     "layerRecovered": "Recuperado",
-    "layerRecoveredConfirmed": "Recuperado (conf.)"
+    "layerRecoveredConfirmed": "Recuperado (confirmado)"
   },
   "about": {
     "title": "Acerca de",
