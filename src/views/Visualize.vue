@@ -44,7 +44,7 @@
               <span>{{ $t(layerDefinition.label) }}</span>
             </base-button>
 
-            <div style="width: 99vw;position: relative;margin-left: -49vw;left: 49.2%;">
+            <div>
               <div id="leaflet-map"></div>
               <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
             </div>
