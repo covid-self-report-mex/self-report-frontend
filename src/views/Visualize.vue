@@ -44,8 +44,10 @@
               <span>{{ $t(layerDefinition.label) }}</span>
             </base-button>
 
-            <div id="leaflet-map"></div>
-            <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
+            <div style="width: 99vw;position: relative;margin-left: -49vw;left: 49.2%;">
+              <div id="leaflet-map"></div>
+              <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
+            </div>
             <!--            <p>{{totalReports}} reports overall</p>-->
 
           </div>
@@ -95,11 +97,11 @@
         datePickerFormat: {
           allowInput: true,
           dateFormat: 'Y-m-d',
-          minDate: '2020-03-25',
+          minDate: '2020-03-31',
           maxDate: _today.toISOString(),
         },
 
-        minBubbleSize: 1000,
+        minBubbleSize: 500,
         maxBubbleSize: 3000,
 
         error: null,
@@ -153,7 +155,7 @@
             sizeRatio: 1,
             color: 'green',
             buttonColor: 'success',
-            opacity: 0.3,
+            opacity: 0.1,
             defaultEnabled: true,
           },
           {
@@ -163,7 +165,7 @@
             sizeRatio: 1,
             color: 'green',
             buttonColor: 'success',
-            opacity: 0.3,
+            opacity: 0.2,
             defaultEnabled: true,
           },
         ],
@@ -429,13 +431,14 @@
               let markerSize = layerDefinition.value(entry) * layerDefinition.sizeRatio;
               // markerSize = markerSize / allLayersMax * this.maxBubbleSize;
               markerSize = markerSize / layerDefinition.data.max * this.maxBubbleSize;
-
-              layerDefinition.data.markers.push(L.circle(geocoding.coordinates, {
-                weight: 0,
-                fillColor: layerDefinition.color,
-                fillOpacity: layerDefinition.opacity,
-                radius: markerSize > 0 ? Math.max(markerSize, this.minBubbleSize) : 0,
-              }).bindPopup(popup));
+              if(markerSize > 0){
+                layerDefinition.data.markers.push(L.circle(geocoding.coordinates, {
+                  weight: 0,
+                  fillColor: layerDefinition.color,
+                  fillOpacity: layerDefinition.opacity,
+                  radius: markerSize > 0 ? Math.max(markerSize, this.minBubbleSize) : 0,
+                }).bindPopup(popup));
+              }
             } catch (error) {
               console.error(entry, error);
             }
@@ -443,7 +446,7 @@
         }
 
         const options = {
-          attribution: `<a href="${this.dataSourceUrl}" target="_blank">Data source</a>`,
+          attribution: `<a href="${this.dataSourceUrl}" target="_blank">Origen de Datos</a>`,
         };
 
         const overlays = {};
@@ -481,7 +484,7 @@
   .data td:first-child {
     font-weight: bold;
     text-align: right;
-    margin-right: 5px;
+    margin-right: 15px;
   }
 
 </style>
