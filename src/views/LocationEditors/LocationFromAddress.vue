@@ -34,14 +34,13 @@
         }
 
         this.geolocationData = geoData.data
-        this.levels = geoData.depth
+        this.levels = geoData.depth + 1
         this.postalCodeMap = geoData.postalCodeMap
 
         this.levelsArray = Array.from(Array(this.levels).keys())
         this.inputDisabled = Array(this.levels).fill(true)
         this.selectedOptions = Array(this.levels).fill(null)
         this.inputDisabled[0] = false
-
 
         if (this.location) {
           this.setAddressByPostalCode(this.location)
@@ -94,6 +93,7 @@
       getData(level) {
           if (level > this.currentLevel)
             return [];
+
           let res = this.geolocationData
           for (let i = 0; i < level; i++) {
               res = res[this.selectedOptions[i]]
@@ -107,6 +107,9 @@
             });
             return [null, ...Object.keys(ordered)]
           }
+          if (typeof res == "string"){
+            return[null, this.selectedOptions[2]]
+          }
 
           return [null, ...Object.keys(res)]
       },
@@ -114,19 +117,29 @@
       sendPostalCode() {
         let res = this.geolocationData
 
-        for (let i = 0; i < this.levels; i++) {
-          res = res[this.selectedOptions[i]]
+        if(this.selectedOptions[2]===this.selectedOptions[3]) {
+          for (let i = 0; i < 3; i++) {
+            res = res[this.selectedOptions[i]]
+          }
+        } else {
+          for (let i = 0; i < this.levels; i++) {
+            res = res[this.selectedOptions[i]]
+          }
         }
+        
 
-        this.postalCode = res
+        this.postalCode = res 
 
         //TODO Solve this workarround
         if(typeof this.postalCode === 'object'){
           this.postalCode = this.postalCode[this.selectedOptions[1]]
           res = this.postalCode
         }
-        console.log(res);
+
+        console.log(res)
+          
         this.locationChanged(res, true)
+
         return res
       },
 
@@ -143,7 +156,7 @@
         });
 
         data = data.filter(x => x.postal_code)
-        // mex,76800,20.4433,-99.9708,Querétaro::San Juan del Río::San Juan del Rio::Centro
+
         let depth = 1
         if (data.length > 0) {
           depth = data[0].region_id.split('::').length;

@@ -15,14 +15,14 @@
       </div>
 
 
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center" slot-scope="{closeMenu}">
-        <li class="nav-item" @click="closeMenu">
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center" >
+        <li class="nav-item" >
           <router-link class="nav-link" to="/">
             {{ $t('report.title') }}
           </router-link>
         </li>
 
-        <li class="nav-item"  @click="closeMenu">
+        <li class="nav-item" >
           <router-link class="nav-link" to="/visualize">
             <button type="button" class="btn btn-info btn-sm d-none d-lg-inline">
               <i class="fa fa-map"></i> 
@@ -33,13 +33,13 @@
             </span>
           </router-link>
         </li>
-        <li class="nav-item" @click="closeMenu">
+        <li class="nav-item">
           <router-link class="nav-link" to="/faq">
             {{ $t('faq.title') }}
           </router-link>
         </li>
 
-        <li class="nav-item" @click="closeMenu">
+        <li class="nav-item">
           <router-link class="nav-link" to="/about">
             {{ $t('about.title') }}
           </router-link>
