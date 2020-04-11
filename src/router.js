@@ -15,11 +15,20 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: "/",
+      path: "/report",
       name: "report",
       components: {
         header: AppHeader,
         default: Report,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/",
+      name: "visualize",
+      components: {
+        header: AppHeader,
+        default: Visualize,
         footer: AppFooter
       }
     },
@@ -31,7 +40,7 @@ export default new Router({
         default: Visualize,
         footer: AppFooter
       }
-    },
+    },    
     {
       path: "/faq",
       name: "faq",
