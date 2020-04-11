@@ -26,12 +26,6 @@
 
             <div class="row mt-0">
               <div class="col-lg-9">
-                <a href="/visualize"> 
-                  <button type="button" class="btn btn-info btn-block  d-lg-none d-md-inline mb-4">
-                  <i class="fa fa-map"></i> 
-                  {{ $t('visualize.title') }}
-                  </button>
-                </a>
                 <p class="text-white">{{ $t('report.intro') }}</p>
 
                 <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>          

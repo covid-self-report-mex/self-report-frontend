@@ -48,6 +48,12 @@
               <div id="leaflet-map"></div>
               <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
             </div>
+            <base-button class="mb-3 mb-sm-0 btn-block "
+                           @click="$router.replace({ name: 'report' })"
+                           type="white"
+                           icon="fa fa-send">
+                {{ $t('report.title') }}
+              </base-button>
             <!--            <p>{{totalReports}} reports overall</p>-->
 
           </div>
@@ -101,7 +107,7 @@
           maxDate: _today.toISOString(),
         },
 
-        minBubbleSize: 500,
+        minBubbleSize: 1000,
         maxBubbleSize: 3000,
 
         error: null,
@@ -123,7 +129,7 @@
             label: 'visualize.layerSickNoCovid',
             value: (entry) => entry.sick_guess_no_corona,
             sizeRatio: 1,
-            color: 'blue',
+            color: 'purple',
             buttonColor: 'info',
             opacity: 0.1,
             defaultEnabled: true,
@@ -135,17 +141,17 @@
             sizeRatio: 1,
             color: 'orangered',
             buttonColor: 'warning',
-            opacity: 0.3,
+            opacity: 0.2,
             defaultEnabled: true,
           },
           {
             id: 'sick_corona_confirmed',
             label: 'visualize.layerSickCovidConfirmed',
             value: (entry) => entry.sick_corona_confirmed,
-            sizeRatio: 1,
+            sizeRatio: 2,
             color: 'red',
             buttonColor: 'danger',
-            opacity: 0.3,
+            opacity: 0.4,
             defaultEnabled: true,
           },
           {

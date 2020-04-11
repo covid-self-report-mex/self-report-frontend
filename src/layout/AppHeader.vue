@@ -17,20 +17,20 @@
 
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center" >
         <li class="nav-item" >
-          <router-link class="nav-link" to="/">
-            {{ $t('report.title') }}
+          <router-link class="nav-link" to="/report">
+            <button type="button" class="btn btn-secondary btn-sm d-none d-lg-inline">
+              <i class="fa fa-send"></i> 
+              {{ $t('report.title') }}
+            </button>
+            <span class="d-md-inline d-lg-none">
+              {{ $t('report.title') }}
+            </span>
           </router-link>
         </li>
 
         <li class="nav-item" >
-          <router-link class="nav-link" to="/visualize">
-            <button type="button" class="btn btn-info btn-sm d-none d-lg-inline">
-              <i class="fa fa-map"></i> 
+          <router-link class="nav-link" to="/">
               {{ $t('visualize.title') }}
-            </button>
-            <span class="d-md-inline d-lg-none">
-              {{ $t('visualize.title') }}
-            </span>
           </router-link>
         </li>
         <li class="nav-item">

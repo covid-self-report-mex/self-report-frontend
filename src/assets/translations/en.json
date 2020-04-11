@@ -4,7 +4,11 @@
     "footer": {
       "support": "Thank you for supporting us!",
       "contact": "Let's get in touch on any of these platforms.",
-      "whatsappshare": "Report your health status to help fighting against the COVID-19!"
+      "whatsappshare": "Report your health status to help fighting against the COVID-19!",
+      "lookingOtherCountry": "Looking for another country?",
+      "ch": "Switzerland",
+      "in": "India",
+      "mx": "Mexico"
     },
     "yes": "Yes",
     "no": "No"

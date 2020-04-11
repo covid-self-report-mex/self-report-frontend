@@ -4,7 +4,11 @@
     "footer": {
       "support": "¡Gracias por apoyarnos!",
       "contact": "Contáctanos a través de cualquiera de estas plataformas.",
-      "whatsappshare": "Reporta tu estado de salud para ayudar a luchar contra el COVID-19!"
+      "whatsappshare": "Reporta tu estado de salud para ayudar a luchar contra el COVID-19!",
+      "lookingOtherCountry": "¿Busca información de otro páis?",
+      "ch": "Suiza",
+      "in": "India",
+      "mx": "México"
     },
     "yes": "Sí",
     "no": "No"
@@ -18,7 +22,7 @@
     "ifNotYou": "si no fueras tu."
   },
   "report": {
-    "title": "Reportar",
+    "title": "Reportar Me",
     "intro": "Ayude a evitar contagios del nuevo Coronavirus en México informando sobre su estado de salud anónimamente.",
     "how": "¿Cómo se siente usted?",
     "healthy": "Me siento sano",
