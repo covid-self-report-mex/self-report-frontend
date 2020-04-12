@@ -92,7 +92,7 @@
         lastUpdateFileUrl: process.env.VUE_APP_VISU_LAST_UPDATE_URL,
 
         showMerged: true,
-        scaleFactor: 100,
+        scaleFactor: 1000,
 
         dateData: 0,
         geocoding: null,
@@ -107,8 +107,8 @@
           maxDate: _today.toISOString(),
         },
 
-        minBubbleSize: 1000,
-        maxBubbleSize: 3000,
+        minBubbleSize: 500,
+        maxBubbleSize: 2000,
 
         error: null,
 
@@ -141,17 +141,17 @@
             sizeRatio: 1,
             color: 'orangered',
             buttonColor: 'warning',
-            opacity: 0.2,
+            opacity: 0.3,
             defaultEnabled: true,
           },
           {
             id: 'sick_corona_confirmed',
             label: 'visualize.layerSickCovidConfirmed',
             value: (entry) => entry.sick_corona_confirmed,
-            sizeRatio: 2,
+            sizeRatio: 1,
             color: 'red',
             buttonColor: 'danger',
-            opacity: 0.4,
+            opacity: 0.5,
             defaultEnabled: true,
           },
           {
@@ -435,8 +435,13 @@
           for (const layerDefinition of this.layersDefinifion) {
             try {
               let markerSize = layerDefinition.value(entry) * layerDefinition.sizeRatio;
-              // markerSize = markerSize / allLayersMax * this.maxBubbleSize;
-              markerSize = markerSize / layerDefinition.data.max * this.maxBubbleSize;
+              markerSize = markerSize * (layerDefinition.value(entry)*10);
+              if (markerSize > this.maxBubbleSize) {
+                markerSize = this.maxBubbleSize;
+              }
+              //markerSize = markerSize / allLayersMax * this.maxBubbleSize;
+              //markerSize = markerSize / layerDefinition.data.max;
+              //markerSize = markerSize * (layerDefinition.value(entry*3));
               if(markerSize > 0){
                 layerDefinition.data.markers.push(L.circle(geocoding.coordinates, {
                   weight: 0,
