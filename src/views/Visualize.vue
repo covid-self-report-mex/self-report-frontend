@@ -107,8 +107,8 @@
           maxDate: _today.toISOString(),
         },
 
-        minBubbleSize: 500,
-        maxBubbleSize: 2000,
+        minBubbleSize: 800,
+        maxBubbleSize: 3000,
 
         error: null,
 
