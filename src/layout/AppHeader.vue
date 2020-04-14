@@ -1,6 +1,6 @@
 <template>
   <header class="header-global">
-    <base-nav class="navbar-main" transparent type="" effect="light" expand>
+    <base-nav class="navbar-main mt-lg-0 mt-3" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
         <img src="img/brand/logo_alpha.png" alt="logo"> {{ $t('app.title') }}
       </router-link>
@@ -13,8 +13,6 @@
           <close-button @click="closeMenu"></close-button>
         </div>
       </div>
-
-
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center" >
         <li class="nav-item" >
           <router-link class="nav-link" to="/report">
@@ -29,7 +27,7 @@
         </li>
 
         <li class="nav-item" >
-          <router-link class="nav-link" to="/">
+          <router-link class="nav-link text-nowrap" to="/">
               {{ $t('visualize.title') }}
           </router-link>
         </li>
@@ -40,13 +38,13 @@
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link" to="/about">
+          <router-link class="nav-link text-nowrap" to="/about">
             {{ $t('about.title') }}
           </router-link>
         </li>
 
         <base-dropdown tag="li" class="nav-item">
-          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
+          <a slot="title" href="#" class="nav-link text-nowrap" data-toggle="dropdown" role="button">
             <i class="ni ni-bold-down"></i>
             <span class="nav-link-inner--text">
               <i class="fa fa-language"></i>Idioma
@@ -94,18 +92,40 @@
         </li>
       </ul>
     </base-nav>
+    <div class="container mt-0 mb-0" style="z-index: 9999;position: relative; top:-.2rem" >
+      <div class="row row-grid">
+        <div class="col text-center">
+          <span v-for="country of countries" :key="country.code">
+              <span v-if="country.code !== countries[0].code" class="country">|</span>
+              <a :href="country.url" class="country">
+                <img :src="`https://www.countryflags.io/${country.code}/flat/64.png`"
+                     :alt="`${country.code} flag`"
+                     target="_blank"
+                     class="flag ml-1"/>
+                {{ $t(`app.footer.${country.code}`) }}
+              </a>
+            </span>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 <script>
   import BaseNav from "@/components/BaseNav";
   import BaseDropdown from "@/components/BaseDropdown";
   import CloseButton from "@/components/CloseButton";
-
+  const countries = require('@/assets/sites.json');
   export default {
     components: {
       BaseNav,
       CloseButton,
       BaseDropdown
+    },
+    data() {
+      return {
+        countries: countries,
+        activeCountry: window.location.origin,
+      }
     },
     methods: {
       setLocale: function (locale) {
@@ -116,6 +136,15 @@
   };
 </script>
 <style>
+  .flag {
+    height: .8rem;
+  }
+
+  .country {
+    white-space: nowrap;
+    font-size: .6rem;
+  }
+
   .header-global {
     z-index: 1000;
   }

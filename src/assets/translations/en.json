@@ -8,7 +8,10 @@
       "lookingOtherCountry": "Looking for another country?",
       "ch": "Switzerland",
       "in": "India",
-      "mx": "Mexico"
+      "mx": "Mexico",
+      "it": "Italy",
+      "se": "Sweden",
+      "pk": "Pakistan"
     },
     "yes": "Yes",
     "no": "No"

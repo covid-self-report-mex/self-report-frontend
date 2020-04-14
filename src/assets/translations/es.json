@@ -8,7 +8,10 @@
       "lookingOtherCountry": "¿Busca información de otro páis?",
       "ch": "Suiza",
       "in": "India",
-      "mx": "México"
+      "mx": "México",
+      "it": "Italia",
+      "se": "Suecia",
+      "pk": "Pakistán"
     },
     "yes": "Sí",
     "no": "No"
@@ -49,7 +52,7 @@
     "contractedOfficial": "Confirmado",
     "contractedOfficialConfirm": "Por favor, confirme",
     "contractedOfficialConfirmText": "¿Ha dado oficialmente positivo a {disease} por una institución médica reconocida?",
-    "locationQuestion": "¿Dónde vive?",
+    "locationQuestion": "¿Dónde vive aproximadamente?",
     "locationPlaceholder": "Código postal",
     "locationValidError": "Por favor, introduzca un número postal válido",
     "send": "Enviar",

@@ -1,25 +1,6 @@
 <template>
   <footer class="footer has-cards">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <p>{{ $t(`app.footer.lookingOtherCountry`) }}</p>
-        </div>
-        <div class="col-lg-6 justify-content-end">
-          <span v-for="country of countries" :key="country.code">
-            <span v-if="country.url !== activeCountry">
-              <span v-if="country.code !== countries[0].code">|</span>
-              <a :href="country.url" class="country">
-                <img :src="`https://www.countryflags.io/${country.code}/flat/64.png`"
-                     :alt="`${country.code} flag`"
-                     target="_blank"
-                     class="flag ml-1"/>
-                {{ $t(`app.footer.${country.code}`) }}
-              </a>
-            </span>
-          </span>
-        </div>
-      </div>
       <div class="row row-grid align-items-center my-md">
         <div class="col-lg-6">
           <h3 class="text-primary font-weight-light mb-2">{{ $t('app.footer.support') }}
@@ -47,30 +28,19 @@
 </template>
 
 <script>
-  const countries = require('@/assets/sites.json');
+  
   export default {
     name: 'app-footer',
     data() {
       return {
         year: new Date().getFullYear(),
-        version: process.env.VERSION,
-        countries: countries,
-        activeCountry: window.location.origin,
+        version: process.env.VERSION
       }
     },
   };
 </script>
 
 <style scoped>
-
-  .flag {
-    height: 32px;
-  }
-
-  .country {
-    white-space: nowrap;
-  }
-  
   .btn-whatsapp {
     -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08)
