@@ -25,7 +25,7 @@
     "ifNotYou": "si no fueras tu."
   },
   "report": {
-    "title": "Reportar Me",
+    "title": "Reportarme",
     "intro": "Ayude a evitar contagios del nuevo Coronavirus en México informando sobre su estado de salud anónimamente.",
     "how": "¿Cómo se siente usted?",
     "healthy": "Me siento sano",
@@ -52,7 +52,7 @@
     "contractedOfficial": "Confirmado",
     "contractedOfficialConfirm": "Por favor, confirme",
     "contractedOfficialConfirmText": "¿Ha dado oficialmente positivo a {disease} por una institución médica reconocida?",
-    "locationQuestion": "¿Dónde vive aproximadamente?",
+    "locationQuestion": "¿Cuál es su area postal?",
     "locationPlaceholder": "Código postal",
     "locationValidError": "Por favor, introduzca un número postal válido",
     "send": "Enviar",
@@ -68,9 +68,9 @@
   },
   "visualize": {
     "title": "Ver Mapa",
-    "map": "Mapa",
-    "dataWarning": "Esta información NO es OFICIAL y se basa en reportes voluntarios directos de la población no verificados.",
-    "lastUpdate": "Última actualización:",
+    "map": "Mapa de reportes anónimos",
+    "dataWarning": "Para todos los países es un reto mantener información en tiempo real, por eso nos hemos unido a una iniciativa mundial para proveer esta aplicación. Esta información no es oficial y se basa en reportes voluntarios, anónimos y no verificados.",
+    "lastUpdate": "Seleccione un circulo para ver mas detalles | Última actualización:",
     "layerHealthy": "Sano",
     "layerSickNoCovid": "Otra enfermedad",
     "layerSickCovid": "COVID-19 (probable)",
@@ -79,7 +79,7 @@
     "layerRecoveredConfirmed": "Recuperado (confirmado)"
   },
   "about": {
-    "title": "Acerca de",
+    "title": "Nosotros",
     "headWho": "Somos un equipo de desarrolladores",
     "who": "que quieren ayudar a evaluar la situación actual de la pandemia de COVID-19 en nuestro país.",
     "headNeedYou": "¡Te necesitamos!",
@@ -99,7 +99,7 @@
     "title": "FAQ",
     "goalQuestion": "¿Cuál es el objetivo de esta aplicación?",
     "goalResponse": "La forma de combatir el COVID-19 es aplanando la curva de contagios, esta aplicación es un apoyo al Gobierno y a la Población para tener una rápida visualización del avance de la pandemia en nuestro país.",
-    "goalResponseExtended": "Para todos los países es un reto mantener información en tiempo real, por eso nos hemos unido a una iniciativa mundial para proveer esta aplicación. ",
+    "goalResponseExtended": "Este proyecto nace de una iniciativa ciudadana desarrollada en Suiza en colaboración con el EPFL y el ETH para que cualquier país lo pueda adoptar. Es traído a México por un grupo de investigadores mexicanos con el fin de promover la participación activa de la ciudadanía en la lucha contra el virus.",
     "othersQuestion": "¿Cómo informo a otros miembros de mi familia?",
     "othersResponse": "Estamos trabajando en este tema. Por ahora, puedes usar un dispositivo diferente (teléfonos, tabletas, computadoras) para cada miembro de tu familia"
   }

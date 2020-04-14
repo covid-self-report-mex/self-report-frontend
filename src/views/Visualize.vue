@@ -21,6 +21,12 @@
 
             <p>
               {{ $t('visualize.dataWarning') }}
+              <base-button class="mb-3 mb-sm-0 d-block btn-block d-lg-none mt-2"
+                           @click="$router.replace({ name: 'report' })"
+                           type="dark"
+                           icon="fa fa-send">
+                {{ $t('report.title') }}
+              </base-button>
             </p>
 
             <base-input addon-left-icon="ni ni-calendar-grid-58">
@@ -48,9 +54,9 @@
               <div id="leaflet-map"></div>
               <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
             </div>
-            <base-button class="mb-3 mb-sm-0 btn-block "
+            <base-button class="mb-3 mb-sm-0 d-block btn-block d-lg-none"
                            @click="$router.replace({ name: 'report' })"
-                           type="white"
+                           type="dark"
                            icon="fa fa-send">
                 {{ $t('report.title') }}
               </base-button>

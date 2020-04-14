@@ -16,7 +16,7 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center" >
         <li class="nav-item" >
           <router-link class="nav-link" to="/report">
-            <button type="button" class="btn btn-secondary btn-sm d-none d-lg-inline">
+            <button type="button" class="btn btn-dark btn-sm d-none d-lg-inline">
               <i class="fa fa-send"></i> 
               {{ $t('report.title') }}
             </button>
