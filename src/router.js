@@ -26,15 +26,7 @@ export default new Router({
     {
       path: "/",
       name: "visualize",
-      components: {
-        header: AppHeader,
-        default: Visualize,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/visualize",
-      name: "visualize",
+      alias: "/visualize",
       components: {
         header: AppHeader,
         default: Visualize,
