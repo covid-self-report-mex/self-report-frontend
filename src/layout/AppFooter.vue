@@ -48,7 +48,6 @@
   </footer>
 </template>
 
-
 <script>
 
   export default {
