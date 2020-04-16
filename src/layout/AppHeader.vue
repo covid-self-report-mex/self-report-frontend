@@ -20,7 +20,7 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/report">
             <button type="button" class="btn btn-dark btn-sm d-none d-lg-inline">
-              <i class="fa fa-send"></i> 
+              <i class="fa fa-send"></i>
               {{ $t('report.title') }}
             </button>
             <span class="d-md-inline d-lg-none">
@@ -30,8 +30,8 @@
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link text-nowrap" to="/">
-              {{ $t('visualize.title') }}
+          <router-link  class="nav-link text-nowrap" to="/">
+            {{ $t('visualize.title') }}
           </router-link>
         </li>
         <li class="nav-item">
@@ -41,13 +41,17 @@
         </li>
 
         <li class="nav-item">
-          <a v-if="redirectOrg" class="text-white" href="http://covid-self-report.org/">
+          <a v-if="redirectOrg" class="nav-link" href="http://covid-self-report.org/">
             {{ $t('about.title') }}
           </a>
-          <router-link v-else class="nav-link" :to="{ name: 'about' }">
+          <router-link v-else class="nav-link text-nowrap" :to="{ name: 'about' }">
             {{ $t('about.title') }}
           </router-link>
         </li>
+
+      </ul>
+
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
 
         <base-dropdown tag="li" class="nav-item">
           <a slot="title" href="#" class="nav-link text-nowrap" data-toggle="dropdown" role="button">
@@ -130,21 +134,21 @@
     },
     data() {
       return {
-        redirectOrg: process.env.VUE_APP_ABOUT_REDIRECT_ORG === 'true',
-        countries: countries,
-        activeCountry: window.location.origin,
+          redirectOrg: process.env.VUE_APP_ABOUT_REDIRECT_ORG === 'true',
+          countries: countries,
+          toggledNav: false,
+          activeCountry: window.location.origin,
       }
     },
     methods: {
-      setLocale: function (locale) {
-        this.$i18n.locale = locale;
-        localStorage.setItem('locale', locale);
-        this.$refs.basenav.closeMenu();
+        setLocale: function (locale) {
+          this.$i18n.locale = locale;
+          localStorage.setItem('locale', locale);
       }
     },
     watch: {
-      $route(to, from) {
-        this.$refs.basenav.closeMenu();
+        $route () {
+            this.toggledNav = false;
       }
     }
   };
@@ -153,19 +157,15 @@
   .flag {
     height: .8rem;
   }
-
   .country {
     white-space: nowrap;
     font-size: .6rem;
   }
-
   .header-global {
     z-index: 1000;
   }
-
   .collapse-brand img {
     height: 24px !important;
     width: 24px !important;
   }
 </style>
-
