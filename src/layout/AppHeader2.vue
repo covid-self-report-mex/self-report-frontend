@@ -1,13 +1,13 @@
 <template>
   <header class="header-global">
-    <base-nav class="navbar-main mt-lg-0 mt-3" transparent type="" effect="light" expand>
+    <base-nav class="navbar-main" ref="basenav" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-        <img src="img/brand/logo_alpha.png" alt="logo"> {{ $t('app.title') }}
+        <img src="img/brand/logo_alpha.png" alt="logo"> Self-report
       </router-link>
 
       <div class="row" slot="content-header" slot-scope="{closeMenu}">
         <div class="col-8 collapse-brand">
-          <img src="img/brand/logo_white_app.png" alt="logo"> {{ $t('app.title') }}
+          <img src="img/brand/logo_white_app.png" alt="logo"> Self-report
         </div>
         <div class="col-4 collapse-close">
           <close-button @click="closeMenu"></close-button>
@@ -18,24 +18,24 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
 
         <li class="nav-item">
-          <router-link class="nav-link" to="/report">
-            <button type="button" class="btn btn-dark btn-sm d-none d-lg-inline">
-              <i class="fa fa-send"></i> 
-              {{ $t('report.title') }}
-            </button>
-            <span class="d-md-inline d-lg-none">
-              {{ $t('report.title') }}
-            </span>
+          <router-link class="nav-link" :to="{ name: 'home' }">
+            {{ $t('home.title') }}
           </router-link>
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link text-nowrap" to="/">
-              {{ $t('visualize.title') }}
+          <router-link class="nav-link" :to="{ name: 'report' }">
+            {{ $t('report.title') }}
+          </router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link class="nav-link" :to="{ name: 'visualize' }">
+            {{ $t('visualize.title') }}
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/faq">
+          <router-link class="nav-link" :to="{ name: 'faq' }">
             {{ $t('faq.title') }}
           </router-link>
         </li>
@@ -49,15 +49,17 @@
           </router-link>
         </li>
 
+      </ul>
+
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+
         <base-dropdown tag="li" class="nav-item">
-          <a slot="title" href="#" class="nav-link text-nowrap" data-toggle="dropdown" role="button">
+          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-bold-down"></i>
-            <span class="nav-link-inner--text">
-              <i class="fa fa-language"></i>Idioma
-            </span>
+            <span class="nav-link-inner--text">Language</span>
           </a>
-          <a href="" class="dropdown-item" @click.prevent="setLocale('es')">Español</a>
-          <a href="" class="dropdown-item" @click.prevent="setLocale('en')">English</a>
+          <a v-for="language of languages" v-bind:key="language.id" href="" class="dropdown-item"
+             @click.prevent="setLocale(language.id)">{{ language.label }}</a>
         </base-dropdown>
 
         <li v-if="socialLinkWhatsapp" class="nav-item">
@@ -99,29 +101,12 @@
       </ul>
 
     </base-nav>
-    <div class="container mt-0 mb-0" style="z-index: 9999;position: relative; top:-.2rem" >
-      <div class="row row-grid">
-        <div class="col text-center">
-          <span v-for="country of countries" :key="country.code">
-              <span v-if="country.code !== countries[0].code" class="country">|</span>
-              <a :href="country.url" class="country">
-                <img :src="`https://www.countryflags.io/${country.code}/flat/64.png`"
-                     :alt="`${country.code} flag`"
-                     target="_blank"
-                     class="flag ml-1"/>
-                {{ $t(`app.footer.${country.code}`) }}
-              </a>
-            </span>
-        </div>
-      </div>
-    </div>
   </header>
 </template>
 <script>
   import BaseNav from "@/components/BaseNav";
   import BaseDropdown from "@/components/BaseDropdown";
   import CloseButton from "@/components/CloseButton";
-  const countries = require('@/assets/sites.json');
   export default {
     components: {
       BaseNav,
@@ -131,8 +116,6 @@
     data() {
       return {
         redirectOrg: process.env.VUE_APP_ABOUT_REDIRECT_ORG === 'true',
-        countries: countries,
-        activeCountry: window.location.origin,
       }
     },
     methods: {
@@ -150,22 +133,11 @@
   };
 </script>
 <style>
-  .flag {
-    height: .8rem;
-  }
-
-  .country {
-    white-space: nowrap;
-    font-size: .6rem;
-  }
-
   .header-global {
     z-index: 1000;
   }
-
   .collapse-brand img {
     height: 24px !important;
     width: 24px !important;
   }
 </style>
-
