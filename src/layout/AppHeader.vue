@@ -13,11 +13,14 @@
           <close-button @click="closeMenu"></close-button>
         </div>
       </div>
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center" >
-        <li class="nav-item" >
+
+
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+
+        <li class="nav-item">
           <router-link class="nav-link" to="/report">
             <button type="button" class="btn btn-dark btn-sm d-none d-lg-inline">
-              <i class="fa fa-send"></i> 
+              <i class="fa fa-send"></i>
               {{ $t('report.title') }}
             </button>
             <span class="d-md-inline d-lg-none">
@@ -26,9 +29,9 @@
           </router-link>
         </li>
 
-        <li class="nav-item" >
-          <router-link class="nav-link text-nowrap" to="/">
-              {{ $t('visualize.title') }}
+        <li class="nav-item">
+          <router-link  class="nav-link text-nowrap" to="/">
+            {{ $t('visualize.title') }}
           </router-link>
         </li>
         <li class="nav-item">
@@ -38,10 +41,17 @@
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link text-nowrap" to="/about">
+          <a v-if="redirectOrg" class="nav-link" href="http://covid-self-report.org/">
+            {{ $t('about.title') }}
+          </a>
+          <router-link v-else class="nav-link text-nowrap" :to="{ name: 'about' }">
             {{ $t('about.title') }}
           </router-link>
         </li>
+
+      </ul>
+
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
 
         <base-dropdown tag="li" class="nav-item">
           <a slot="title" href="#" class="nav-link text-nowrap" data-toggle="dropdown" role="button">
@@ -91,6 +101,7 @@
           </a>
         </li>
       </ul>
+
     </base-nav>
     <div class="container mt-0 mb-0" style="z-index: 9999;position: relative; top:-.2rem" >
       <div class="row row-grid">
@@ -123,14 +134,21 @@
     },
     data() {
       return {
-        countries: countries,
-        activeCountry: window.location.origin,
+          redirectOrg: process.env.VUE_APP_ABOUT_REDIRECT_ORG === 'true',
+          countries: countries,
+          toggledNav: false,
+          activeCountry: window.location.origin,
       }
     },
     methods: {
-      setLocale: function (locale) {
-        this.$i18n.locale = locale;
-        localStorage.setItem('locale', locale);
+        setLocale: function (locale) {
+          this.$i18n.locale = locale;
+          localStorage.setItem('locale', locale);
+      }
+    },
+    watch: {
+        $route () {
+            this.toggledNav = false;
       }
     }
   };
@@ -139,19 +157,15 @@
   .flag {
     height: .8rem;
   }
-
   .country {
     white-space: nowrap;
     font-size: .6rem;
   }
-
   .header-global {
     z-index: 1000;
   }
-
   .collapse-brand img {
     height: 24px !important;
     width: 24px !important;
   }
 </style>
-

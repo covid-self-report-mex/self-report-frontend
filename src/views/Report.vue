@@ -26,9 +26,7 @@
 
             <div class="row mt-0">
               <div class="col-lg-9">
-                <p class="text-white">{{ $t('report.intro') }}</p>
-
-                <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>          
+                <p class="text-white"><b>{{ $t('report.intro') }}</b></p>
 
                 <h1 class="display-3 text-white">{{ $t('report.how') }}</h1>
 

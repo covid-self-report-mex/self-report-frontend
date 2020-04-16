@@ -18,7 +18,7 @@
       location: String,
       valid: Boolean,
     },
-    watch: { 
+    watch: {
       	location: function(newVal, oldVal) {
           if (newVal) {
             //this.setAddressByPostalCode(newVal)
@@ -34,7 +34,7 @@
         }
 
         this.geolocationData = geoData.data
-        this.levels = geoData.depth + 1
+        this.levels = geoData.depth
         this.postalCodeMap = geoData.postalCodeMap
 
         this.levelsArray = Array.from(Array(this.levels).keys())
@@ -66,7 +66,7 @@
         this.$emit('update:location', value);
       },
 
-      onInputSelected(level) { 
+      onInputSelected(level) {
         if (this.inputDisabled[level]) {
           return
         }
@@ -98,7 +98,7 @@
           for (let i = 0; i < level; i++) {
               res = res[this.selectedOptions[i]]
           }
-          
+
           //Sort last level
           if (level == 2) {
             const ordered = {};
@@ -126,9 +126,9 @@
             res = res[this.selectedOptions[i]]
           }
         }
-        
 
-        this.postalCode = res 
+
+        this.postalCode = res
 
         //TODO Solve this workarround
         if(typeof this.postalCode === 'object'){
@@ -137,7 +137,7 @@
         }
 
         console.log(res)
-          
+
         this.locationChanged(res, true)
 
         return res
