@@ -1,0 +1,26 @@
+[
+  {
+    "code": "ch",
+    "url": "https://covid-self-report.ch"
+  },
+  {
+    "code": "in",
+    "url": "https://covid-self-report.in"
+  },
+  {
+    "code": "mx",
+    "url": "https://covid-me-reporto.mx"
+  },
+  {
+    "code": "it",
+    "url": "https://covid-self-report.it"
+  },
+  {
+    "code": "se",
+    "url": "https://covidmap.se/"
+  }, 
+  {
+    "code": "pk",
+    "url": "https://covid-self-report.pk"
+  }
+]

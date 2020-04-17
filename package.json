@@ -1,0 +1,42 @@
+{
+  "name": "covid-self-report",
+  "version": "1.5.0",
+  "author": {
+    "name": "Christian Müller",
+    "email": "muller.ch@gmail.com"
+  },
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "bootstrap-vue": "^2.0.4",
+    "core-js": "^2.6.11",
+    "flatpickr": "^4.5.1",
+    "leaflet": "^1.6.0",
+    "new-github-issue-url": "^0.2.1",
+    "nouislider": "^11.1.0",
+    "papaparse": "^5.1.1",
+    "register-service-worker": "^1.5.2",
+    "uuid": "^7.0.2",
+    "vue": "^2.6.6",
+    "vue-flatpickr-component": "^8.1.1",
+    "vue-i18n": "^8.15.6",
+    "vue-lazyload": "^1.2.6",
+    "vue-recaptcha-v3": "^1.8.0",
+    "vue-router": "^3.0.2",
+    "vue2-leaflet": "^2.5.2",
+    "vue2-transitions": "^0.2.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-plugin-pwa": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.6"
+  }
+}
