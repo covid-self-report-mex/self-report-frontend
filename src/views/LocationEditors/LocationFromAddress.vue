@@ -136,8 +136,6 @@
           res = this.postalCode
         }
 
-        console.log(res)
-
         this.locationChanged(res, true)
 
         return res
