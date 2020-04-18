@@ -21,8 +21,8 @@
         </div>
       </div>
       <div class="copyright">
-            Comentarios y sugerencias:
-            <a href="mailto:info@covid-me-reporto.mx" target="_blank">aquí</a>
+            {{ $t('app.footer.comments') }}
+            <a href="mailto:info@covid-me-reporto.mx" target="_blank">{{ $t('app.footer.here') }}</a>
           </div>
       <hr>
       <div class="row align-items-center justify-content-md-between">
