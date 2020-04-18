@@ -182,7 +182,7 @@
 
             <div class="row mt-3" v-show="reportData.sick !== null">
               <div class="col-lg-6">
-                <base-button @click="send; reportData.searchPC = false"
+                <base-button @click="send"
                              :disabled="!validLocation || reportData.diagnostic === null"
                              class="mb-3 mb-sm-0"
                              type="white"
