@@ -159,20 +159,30 @@
             <div class="row mt-3" v-show="reportData.sick !== null">
               <div class="col-lg-6">
                 <h3 class="text-white">{{ $t('report.locationQuestion') }}</h3>
-
-                <location-from-address v-if="locationSelector === 'address'"
-                                       :location.sync="reportData.postalCode"
+                <base-button class="mt-2"
+                             :type="reportData.searchPC === true ? 'info' : 'white'"
+                             @click="reportData.searchPC = true">
+                  <span>{{ $t('report.searchPC') }}</span>
+                </base-button>
+                <div>
+                  .
+                </div>
+                  <div class="row mt-3" v-show="reportData.searchPC !== false">
+                    <div class="col-lg-6">
+                      <location-from-address :location.sync="reportData.postalCode"
                                        :valid.sync="validLocation"></location-from-address>
-
-                <location-from-postal-code v-else
-                                           :location.sync="reportData.postalCode"
+                      <p class="text-white">{{ $t(`report.yourPC`) }}</p>
+                    </div>
+                  </div>
+                <location-from-postal-code :location.sync="reportData.postalCode"
                                            :valid.sync="validLocation"></location-from-postal-code>
-              </div>
+                </div>
             </div>
+
 
             <div class="row mt-3" v-show="reportData.sick !== null">
               <div class="col-lg-6">
-                <base-button @click="send"
+                <base-button @click="send; reportData.searchPC = false"
                              :disabled="!validLocation || reportData.diagnostic === null"
                              class="mb-3 mb-sm-0"
                              type="white"
@@ -318,6 +328,7 @@
           diagnostic: null,
           postalCode: null,
           lastReport: null,
+            searchPC: false,
         },
         sending: false,
 

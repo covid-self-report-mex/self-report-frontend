@@ -61,6 +61,8 @@
         "contractedOfficialConfirmText": "¿Has dado oficialmente positivo a {disease} por una institución médica reconocida?",
         "locationQuestion": "¿Cuál es tu area postal?",
         "locationPlaceholder": "Código postal",
+        "searchPC": "Buscar código postal",
+        "yourPC": "Tu código postal es: ",
         "locationValidError": "Por favor, introduce un número postal válido",
         "send": "Enviar",
         "error": "Error",
