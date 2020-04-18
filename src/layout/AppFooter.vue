@@ -10,6 +10,12 @@
       <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
         <img src="img/partners/epfl.png" alt="EPFL" style="float:left" width="150rem">
       </a>
+      <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
+        <img src="img/partners/google-cloud-platform-logo.png" alt="GCP" style="float:left" width="250rem">
+      </a>
+      <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
+        <img src="img/partners/Google_Maps-Logo.png" alt="GCP" style="float:left" width="350rem">
+      </a>
       <a href="https://bmi.inf.ethz.ch/" target="_blank">
         <img src="img/partners/eth.png" alt="ETH" style="float:right" width="150rem">
       </a>
