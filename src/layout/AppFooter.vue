@@ -10,6 +10,12 @@
       <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
         <img src="img/partners/epfl.png" alt="EPFL" style="float:left" width="150rem">
       </a>
+      <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
+        <img src="img/partners/google-cloud-platform-logo.png" alt="GCP" style="float:left" width="250rem">
+      </a>
+      <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
+        <img src="img/partners/Google_Maps-Logo.png" alt="GCP" style="float:left" width="350rem">
+      </a>
       <a href="https://bmi.inf.ethz.ch/" target="_blank">
         <img src="img/partners/eth.png" alt="ETH" style="float:right" width="150rem">
       </a>
@@ -21,8 +27,8 @@
         </div>
       </div>
       <div class="copyright">
-            Comentarios y sugerencias:
-            <a href="mailto:info@covid-me-reporto.mx" target="_blank">aquí</a>
+            {{ $t('app.footer.comments') }}
+            <a href="mailto:info@covid-me-reporto.mx" target="_blank">{{ $t('app.footer.here') }}</a>
           </div>
       <hr>
       <div class="row align-items-center justify-content-md-between">

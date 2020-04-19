@@ -233,7 +233,7 @@
       },
       loadGeocode: function (url) {
         return new Promise(function (resolve, reject) {
-          console.log(`Getting geocoding data at '${url}'`);
+          // console.log(`Getting geocoding data at '${url}'`);
           Papa.parse(url, {
             download: true,
             header: true,
@@ -457,7 +457,7 @@
                 }).bindPopup(popup));
               }
             } catch (error) {
-              console.error(entry, error);
+              // console.error(entry, error);
             }
           }
         }
