@@ -49,12 +49,6 @@
           </router-link>
         </li>
 
-        <li class="nav-item">
-          <router-link  class="nav-link text-nowrap" to="mailto:info@covid-me-reporto.mx">
-            {{ $t('app.contactus') }}
-          </router-link>
-        </li>
-
       </ul>
 
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
