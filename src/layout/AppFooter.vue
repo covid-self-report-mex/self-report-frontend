@@ -7,15 +7,17 @@
           </h3>
         </div>
       </div>
-      <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
-        <img class="img" src="img/partners/epfl.png" alt="EPFL" height="50rem">
-      </a>
-      <a href="https://bmi.inf.ethz.ch/" target="_blank">
-        <img class="img ml-5" src="img/partners/eth.png" alt="ETH" height="50rem">
-      </a>
-      <a href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
-        <img class="img ml-5" src="img/partners/google-cloud-platform-logo.png" alt="GCP" height="50rem">
-      </a>
+      <div class="row">
+        <a class="col-4 col-lg-2" href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
+          <img class="img" src="img/partners/epfl.png" alt="EPFL" height="30rem">
+        </a>
+        <a class="col-4 col-lg-2" href="https://bmi.inf.ethz.ch/" target="_blank">
+          <img class="img" src="img/partners/eth.png" alt="ETH" height="30rem">
+        </a>
+        <a class="col-4 col-lg-2" href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
+          <img class="img" src="img/partners/google-cloud-platform-logo.png" alt="GCP" height="30rem">
+        </a>
+      </div>
       <p style="clear: both;">
       <div class="row row-grid align-items-center my-md">
         <div class="col-lg-6">
