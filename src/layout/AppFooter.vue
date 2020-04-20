@@ -1,23 +1,6 @@
 <template>
   <footer class="footer has-cards">
     <div class="container">
-      <div class="row row-grid align-items-center my-2">
-        <div class="col-lg-6">
-          <h3 class="text-primary font-weight-light mb-2">{{ $t('app.footer.partner') }}
-          </h3>
-        </div>
-      </div>
-      <div class="row">
-        <a class="col-4 col-lg-2" href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
-          <img class="img" src="img/partners/epfl.png" alt="EPFL" height="30rem">
-        </a>
-        <a class="col-4 col-lg-2" href="https://bmi.inf.ethz.ch/" target="_blank">
-          <img class="img" src="img/partners/eth.png" alt="ETH" height="30rem">
-        </a>
-        <a class="col-4 col-lg-2" href="https://www.epfl.ch/labs/mlo/igh-intelligent-global-health/" target="_blank">
-          <img class="img" src="img/partners/google-cloud-platform-logo.png" alt="GCP" height="30rem">
-        </a>
-      </div>
       <p style="clear: both;">
       <div class="row row-grid align-items-center my-md">
         <div class="col-lg-6">
