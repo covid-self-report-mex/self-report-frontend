@@ -109,7 +109,7 @@
           <span v-for="country of countries" :key="country.code">
               <span v-if="country.code !== countries[0].code" class="country">|</span>
               <a :href="country.url" class="country">
-                <img :src="`https://www.countryflags.io/${country.code}/flat/64.png`"
+                <img :src="`img/icons/flags/${country.code}/16.png`"
                      :alt="`${country.code} flag`"
                      target="_blank"
                      class="flag ml-1"/>
