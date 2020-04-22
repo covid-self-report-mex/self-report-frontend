@@ -34,23 +34,44 @@
   <title>Covid Me Reporto | México</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162145467-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-</head>
-<body>
-<noscript>
-  <strong>
-    We're sorry but COVID self report doesn't work properly without JavaScript enabled. Please enable it to continue.
-  </strong>
-</noscript>
-<div id="app"></div>
-<!-- built files will be auto injected -->
-</body>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162145467-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      gtag('config', 'UA-162145467-1');
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer>
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=1, shrink-to-fit=no"
+          name="viewport">
+    <meta name="description" content="Herramienta de auto-reporte de salud, para combatir la pandemia de COVID-19 en México">
+    <meta name="author" content="Nicolas Uffer, Christian Müller">
+    <meta property="og:url"                content="https://covid-me-reporto.mx/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Reporta tu estado de salud" />
+    <meta property="og:description"        content="Iniciativa ciudadana. Ayudas a todos" />
+    <meta property="og:image"              content="https://covid-me-reporto.mx/img/brand/facebook.png" />
+    <meta property="og:locale"             content="es_MX" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>Covid-Me-Reporto.mx</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
-  gtag('config', 'UA-162145467-1');
-</script>
+  </head>
+
+  <body>
+    <noscript>
+      <strong>
+        We're sorry but COVID self report doesn't work properly without JavaScript enabled. Please enable it to continue.
+      </strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
