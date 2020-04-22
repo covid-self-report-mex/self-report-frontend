@@ -92,7 +92,7 @@
     data() {
       return {
         dataLoaded: false,
-        mapBaseLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        mapBaseLayerUrl: 'img/map/{s}/{z}/{x}/{y}.png',
         dataSourceBaseUrl: process.env.VUE_APP_VISU_DATA_SOURCE_URL,
         geocodeFileUrl: process.env.VUE_APP_VISU_GEOCODE_URL,
         lastUpdateFileUrl: process.env.VUE_APP_VISU_LAST_UPDATE_URL,
