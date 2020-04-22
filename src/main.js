@@ -61,7 +61,7 @@ for (let language of configuredLanguages) {
       });
     }
   } catch (error) {
-    console.error(`Could not load language '${language}': ${error}`)
+    //console.error(`Could not load language '${language}': ${error}`)
   }
 }
 
