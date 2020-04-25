@@ -92,9 +92,8 @@
     data() {
       return {
         dataLoaded: false,
-        mapBaseLayerUrl: 'img/map/{s}/{z}/{x}/{y}.png',
+        mapBaseLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         dataSourceBaseUrl: process.env.VUE_APP_VISU_DATA_SOURCE_URL,
-        geocodeFileUrl: process.env.VUE_APP_VISU_GEOCODE_URL,
         lastUpdateFileUrl: process.env.VUE_APP_VISU_LAST_UPDATE_URL,
 
         showMerged: true,
@@ -184,12 +183,6 @@
       };
     },
     async mounted() {
-
-      try {
-        this.geocoding = await this.loadGeocode(this.geocodeFileUrl);
-      } catch (error) {
-        this.error = error;
-      }
 
       try {
         await this.loadLeaflet();
@@ -394,33 +387,7 @@
             continue;
           }
 
-          const geocoding = this.geocoding[entry.postal_code];
-
-          if (!geocoding) {
-            ignored++;
-            continue;
-          }
-
           let popup = ``;
-          const places = geocoding.places.filter(p => isNaN(p));
-          switch (places.length) {
-            case 0:
-              popup += `<h4>${entry.postal_code}</h4>`;
-              break;
-
-            case 1:
-              popup += `<h4>${entry.postal_code} ${places[0]}</h4>`;
-              break;
-
-            default:
-              popup += `<h4>${entry.postal_code}</h4>`;
-              popup += `<ul>`;
-              for (const place of places) {
-                popup += `<li><b>${place}</b></li>`;
-              }
-              popup += `</li>`;
-              break;
-          }
 
           popup += `
             <p></p>
@@ -449,7 +416,7 @@
               //markerSize = markerSize / layerDefinition.data.max;
               //markerSize = markerSize * (layerDefinition.value(entry*3));
               if(markerSize > 0){
-                layerDefinition.data.markers.push(L.circle(geocoding.coordinates, {
+                layerDefinition.data.markers.push(L.circle({lat: entry.latitude, lng: entry.longitude}, {
                   weight: 0,
                   fillColor: layerDefinition.color,
                   fillOpacity: layerDefinition.opacity,
@@ -457,7 +424,7 @@
                 }).bindPopup(popup));
               }
             } catch (error) {
-              // console.error(entry, error);
+               console.error(entry, error);
             }
           }
         }
