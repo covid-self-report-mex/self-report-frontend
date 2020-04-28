@@ -16,6 +16,12 @@
               <h5 class="text-white">Error</h5>
               <p v-html="error"></p>
             </base-alert>
+            <base-alert type="danger" class="text-center">
+              <a class="text-white" :href="ATlinkIndividuals" target="_blank" rel="noopener"
+                     data-toggle="tooltip" title="Official Information">
+                {{ $t('visualize.help') }}
+              </a>
+            </base-alert>
 
             <h1 class="display-4 text-white">{{ $t('visualize.map') }}</h1>
 

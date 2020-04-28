@@ -371,10 +371,10 @@
         try {
           this.reportData.lastReport = new Date();
 
-          await this.$recaptchaLoaded();
+          this.$recaptchaLoaded();
 
           // Execute reCAPTCHA with action "report".
-          const token = await this.$recaptcha('report');
+          const token = this.$recaptcha('report');
 
           const headers = new Headers();
           headers.append("Content-Type", "application/json");

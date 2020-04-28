@@ -28,6 +28,8 @@ Vue.prototype.socialLinkGithub = process.env.VUE_APP_SOCIAL_GITHUB;
 Vue.prototype.socialLinkInstagram = process.env.VUE_APP_SOCIAL_INSTAGRAM;
 Vue.prototype.socialLinkFacebook = process.env.VUE_APP_SOCIAL_FACEBOOK;
 Vue.prototype.socialLinkWHO = process.env.VUE_APP_WHO;
+Vue.prototype.ATlinkIndividuals = process.env.VUE_APP_AT;
+
 
 /* Theme */
 import Argon from "./plugins/argon-kit";

@@ -86,7 +86,9 @@
         "layerSickCovid": "COVID-19 (probable)",
         "layerSickCovidConfirmed": "COVID-19 (confirmed)",
         "layerRecovered": "Recovered",
-        "layerRecoveredConfirmed": "Recovered (confirmed)"
+        "layerRecoveredConfirmed": "Recovered (confirmed)",
+        "help": "If you want to help with distribution centers, register by clicking here"
+
     },
     "about": {
         "title": "About us",
