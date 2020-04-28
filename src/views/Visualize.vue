@@ -18,7 +18,7 @@
             </base-alert>
             <base-alert type="danger" class="text-center">
               <a class="text-white" :href="ATlinkIndividuals" target="_blank" rel="noopener"
-                     data-toggle="tooltip" title="Official Information">
+                     data-toggle="tooltip" title="Registro de individuos">
                 {{ $t('visualize.help') }}
               </a>
             </base-alert>
@@ -54,6 +54,15 @@
                          :icon="`fa fa-${layerEnabled(layerDefinition) ? 'check-square' : 'square-o'}`"
                          @click="toggleLayer(layerDefinition)">
               <span>{{ $t(layerDefinition.label) }}</span>
+            </base-button>
+
+            <base-button v-for="(layerCenter) in layersCenter" :key="layerCenter.id"
+                         class="mb-3"
+                         size="sm"
+                         :type="layerCenter.buttonColor"
+                         :icon="`fa fa-${layerEnabled(layerCenter) ? 'check-square' : 'square-o'}`"
+                         @click="toggleLayer(layerCenter)">
+              <span>{{ $t(layerCenter.label) }}</span>
             </base-button>
 
             <div>

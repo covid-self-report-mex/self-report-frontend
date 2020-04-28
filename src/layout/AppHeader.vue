@@ -41,7 +41,7 @@
         </li>
 
         <li class="nav-item">
-          <a v-if="redirectOrg" class="nav-link" href="http://covid-self-report.org/">
+          <a v-if="redirectOrg" class="nav-link" :href="linkOrg" target="_blank">
             {{ $t('about.title') }}
           </a>
           <router-link v-else class="nav-link text-nowrap" :to="{ name: 'about' }">
