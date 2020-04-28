@@ -424,7 +424,7 @@
                 }).bindPopup(popup));
               }
             } catch (error) {
-               console.error(entry, error);
+               //console.error(entry, error);
             }
           }
         }

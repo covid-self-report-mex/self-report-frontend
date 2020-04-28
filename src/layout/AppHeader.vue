@@ -2,9 +2,13 @@
   <header class="header-global">
     <base-nav class="navbar-main mt-lg-0 mt-3" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-        <img src="img/brand/logo_alpha.png" alt="logo"> {{ $t('app.title') }}
+        <div>
+          <img src="img/brand/logo_alpha.png" alt="logo"> {{ $t('app.title') }}
+          <span class="ml-2 mr-1">+</span>
+          <img src="img/partners/unam.png" style="height: 1.4rem;" alt="unam">
+        </div>
       </router-link>
-
+       
       <div class="row" slot="content-header" slot-scope="{closeMenu}">
         <div class="col-8 collapse-brand">
           <img src="img/brand/logo_white_app.png" alt="logo"> {{ $t('app.title') }}
