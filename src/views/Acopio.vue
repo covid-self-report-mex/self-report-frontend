@@ -41,6 +41,9 @@
                 {{ $t('visualize.button') }}
               </base-button>
             </p>
+            <iframe class="airtable-embed" src="https://airtable.com/embed/shru7dSwjEWxq2GB9?backgroundColor=blue&viewControls=on"
+                    frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
+            </iframe>
           </div>
         </div>
       </section>
