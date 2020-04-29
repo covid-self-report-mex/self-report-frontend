@@ -2,6 +2,16 @@
   <footer class="footer has-cards">
     <div class="container">
       <p style="clear: both;">
+      <div class="row row-grid align-items-center my-2">
+        <div class="col-lg-6">
+          <h3 class="text-primary font-weight-light mb-2">{{ $t('app.footer.partner') }}
+          </h3>
+        </div>
+      </div>
+      <a href="https://www.unam.mx/" target="_blank">
+        <img src="img/partners/unam-large.png" alt="UNAM" style="float:left" width="300rem">
+      </a>
+      <p style="clear: both;">
       <div class="copyright">
             {{ $t('app.footer.comments') }}
             <a href="mailto:info@covid-me-reporto.mx" target="_blank">{{ $t('app.footer.here') }}</a>
