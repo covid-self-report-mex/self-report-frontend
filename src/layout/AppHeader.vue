@@ -18,27 +18,17 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
 
         <li class="nav-item">
-          <router-link class="nav-link" to="/report">
-            <button type="button" class="btn btn-dark btn-sm d-none d-lg-inline">
-              <i class="fa fa-send"></i>
-              {{ $t('report.title') }}
-            </button>
-            <span class="d-md-inline d-lg-none">
-              {{ $t('report.title') }}
-            </span>
+          <router-link  class="nav-link text-nowrap" to="/">
+            {{ $t('app.landing') }}
           </router-link>
         </li>
 
-        <li class="nav-item">
-          <router-link  class="nav-link text-nowrap" to="/">
-            {{ $t('visualize.title') }}
-          </router-link>
-        </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/faq">
             {{ $t('faq.title') }}
           </router-link>
         </li>
+
 
         <li class="nav-item">
           <a v-if="redirectOrg" class="nav-link" :href="linkOrg" target="_blank">

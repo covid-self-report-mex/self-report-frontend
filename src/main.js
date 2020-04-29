@@ -30,6 +30,10 @@ Vue.prototype.socialLinkFacebook = process.env.VUE_APP_SOCIAL_FACEBOOK;
 Vue.prototype.socialLinkWHO = process.env.VUE_APP_WHO;
 Vue.prototype.ATlinkIndividuals = process.env.VUE_APP_AT;
 Vue.prototype.linkOrg = process.env.VUE_APP_ORG;
+Vue.prototype.mapLatitude = process.env.VUE_APP_VISU_MAP_CENTER_LATITUDE;
+Vue.prototype.mapLongitude = process.env.VUE_APP_VISU_MAP_CENTER_LONGITUDE;
+Vue.prototype.mapZoom = process.env.VUE_APP_VISU_MAP_ZOOM_LEVEL;
+
 
 /* Theme */
 import Argon from "./plugins/argon-kit";

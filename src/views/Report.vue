@@ -7,7 +7,7 @@
           <span></span>
           <span></span>
         </div>
-        <div class="container shape-container d-flex" style="top: -5rem">
+        <div class="container shape-container d-flex" style="top: -6rem">
 
           <div v-if="daysSinceLastReport === null || daysSinceLastReport > 0 || forceReportAgain"
                class="col px-0">
@@ -246,6 +246,14 @@
               {{ $t('report.sentMistake') }}
               <base-button size="sm" @click="forceReportAgain = true" type="info">
                 {{ $t('report.sentMistakeClickHere') }}
+              </base-button>
+            </p>
+            <p>
+              <base-button class="mb-3 mb-sm-0 d-block btn-block  mt-2"
+                           @click="$router.replace({ name: 'landing' })"
+                           type="info"
+                           icon="fa fa-info">
+                {{ $t('app.landing') }}
               </base-button>
             </p>
           </div>
