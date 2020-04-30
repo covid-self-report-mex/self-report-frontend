@@ -1,10 +1,9 @@
 {
     "app": {
         "title": "COVID-Me-Reporto.mx",
-        "contactus": "Contact us",
         "footer": {
             "support": "Thank you for supporting us!",
-            "partner": "Partners and sponsors",
+            "partner": "Partners",
             "contact": "Contact us through any of these platforms:",
             "here": "HERE",
             "whatsappshare": "Report your health to help fight COVID-19!",
@@ -18,7 +17,11 @@
             "pk": "Pakistan"
         },
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "contactus": "Contact us",
+        "welcome1": "Hello, you can help registering a distribution center or you can search for one nearby.",
+        "welcome2": "You can also help self-reporting your health status or see the reports in your area.",
+        "landing": "Home"
     },
     "renewReport": {
         "comingBack": "Thank you for coming back.",
@@ -62,8 +65,6 @@
         "contractedOfficialConfirmText": "Have you officially tested positive for {disease} by a recognized medical institution?",
         "locationQuestion": "What is your postal area?",
         "locationPlaceholder": "Postal Code",
-        "searchPC": "Search postal code",
-        "yourPC": "Your postal code is ",
         "locationValidError": "Please enter a valid postal number",
         "send": "Send",
         "error": "Error",
@@ -74,7 +75,10 @@
         "sentSomeoneElse": "If you want to report another person, please use another phone, tablet or computer",
         "sentMistake": "You made a mistake? You can fix it ",
         "sentMistakeClickHere": "here",
-        "officialInformation": "Click here for OFFICIAL information"
+        "officialInformation": "Click here for OFFICIAL information",
+        "button": "Anonimous report",
+        "searchPC": "Search postal code",
+        "yourPC": "Your postal code is: "
     },
     "visualize": {
         "title": "Map",
@@ -87,8 +91,8 @@
         "layerSickCovidConfirmed": "COVID-19 (confirmed)",
         "layerRecovered": "Recovered",
         "layerRecoveredConfirmed": "Recovered (confirmed)",
-        "help": "If you want to help setting up distribution centers or in an existing one, register by clicking here"
-
+        "button": "Go to self-report map",
+        "help": "If you wish to help opening a distribution center or in an existing one, you can register and join our community here"
     },
     "about": {
         "title": "About us",
@@ -116,7 +120,8 @@
         "othersResponse": "We are working on this issue. For now, you can use a different device (phones, tablets, computers) for each member of your family"
     },
     "acopio": {
-        "title": "Distribution center",
-        "goalQuestion": "¿Cuál es el objetivo de esta aplicación?"
+        "title": "Acopio",
+        "button": "Map of distribution centers",
+        "register": "Register a center"
     }
 }
