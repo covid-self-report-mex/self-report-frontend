@@ -34,16 +34,23 @@
         </li>
 
         <li class="nav-item">
+          <router-link class="nav-link" to="/faq">
+            <button type="button" class="btn btn-warning btn-sm d-none d-lg-inline">
+              <i class="fa fa-ambulance"></i>
+              {{ $t('faq.titleShort') }}
+            </button>
+            <span class="d-md-inline d-lg-none">
+              {{ $t('faq.titleShort') }}
+            </span>
+          </router-link>
+        </li>
+
+        <li class="nav-item">
           <router-link  class="nav-link text-nowrap" to="/">
             {{ $t('visualize.title') }}
           </router-link>
         </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/faq">
-            {{ $t('faq.title') }}
-          </router-link>
-        </li>
-
+        
         <li class="nav-item">
           <a v-if="redirectOrg" class="nav-link" href="http://covid-self-report.org/">
             {{ $t('about.title') }}

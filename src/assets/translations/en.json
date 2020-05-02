@@ -106,7 +106,9 @@
         "improvement": "for improvement or want to report a bug, please contact us at info@covid-me-reporto.mx."
     },
     "faq": {
-        "title": "FAQ",
+        "title": "Distribution Centers",
+        "titleShort": "D. Centers",
+        "register": "Register a Distribution Center",
         "goalQuestion": "What is the purpose of this application?",
         "goalResponse": "The way to combat COVID-19 is by flattening the contagion curve, this application is a support to the Government and the People to have a quick visualization of the advance of the pandemic in our country.",
         "goalResponseExtended": "This was born from a public initiative in Switzerland in collaboration with the EPFL and the ETH with the aim of deploying in as many countries as possible. It is brought to Mexico by a group of Mexican researchers in order to promote the active participation of the public in the fight against the virus.",

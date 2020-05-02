@@ -8,16 +8,18 @@
           <span></span>
           <span></span>
         </div>
-        <div class="container shape-container d-flex">
+        <div class="container shape-container d-flex" style="top: -5rem">
 
-          <div class="col text-white">
-            <h1 class="display-3 text-white">{{ $t('faq.title') }}</h1>
+          <div class="col text-white">        
 
-            <h3 class="text-white">{{ $t(`faq.goalQuestion`, {disease: 'Covid-19'}) }}</h3>
-            <p>{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>
+            <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1cTOL4bChRmErkI5pxtj6nKuQ9soc7Ckb" width="100%" height="480"></iframe>
 
-            <h3 class="text-white">{{ $t(`faq.othersQuestion`, {disease: 'Covid-19'}) }}</h3>
-            <p>{{ $t(`faq.othersResponse`, {disease: 'Covid-19'}) }}</p>
+            <base-button class="mb-3 mb-sm-0 d-block btn-block"
+                           @click="openAirTable()"
+                           type="warning"
+                           icon="fa fa-send">
+                {{ $t('faq.register') }}
+            </base-button>
 
           </div>
         </div>
@@ -35,6 +37,11 @@
     data() {
       return {}
     },
+    methods:{
+      openAirTable: function () {   
+          window.open("https://airtable.com/shroRQ6P9z3gLxo0h/", "_blank");    
+      }
+    }
   };
 
 </script>

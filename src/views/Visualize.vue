@@ -55,10 +55,10 @@
               <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
             </div>
             <base-button class="mb-3 mb-sm-0 d-block btn-block d-lg-none"
-                           @click="$router.replace({ name: 'report' })"
-                           type="dark"
-                           icon="fa fa-send">
-                {{ $t('report.title') }}
+                           @click="$router.replace({ name: 'faq' })"
+                           type="warning"
+                           icon="fa fa-ambulance">
+                {{ $t('faq.title') }}
               </base-button>
             <!--            <p>{{totalReports}} reports overall</p>-->
 
