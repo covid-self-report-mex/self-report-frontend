@@ -113,7 +113,13 @@
         "improvement": "o quieres reportar un error, por favor contactanos info@covid-me-reporto.mx."
     },
     "faq": {
+<<<<<<< HEAD
         "title": "Preguntas",
+=======
+        "title": "Centros de Acopio",
+        "titleShort": "CC. de Acopio",
+        "register": "Registrar un Cetnro de Acopio",
+>>>>>>> a480e2461e2afa00415fc6387f7a349e04bfe1ba
         "goalQuestion": "¿Cuál es el objetivo de esta aplicación?",
         "goalResponse": "La forma de combatir el COVID-19 es aplanando la curva de contagios, esta aplicación es un apoyo al Gobierno y a la Población para tener una rápida visualización del avance de la pandemia en nuestro país.",
         "goalResponseExtended": "Este proyecto nace de una iniciativa ciudadana desarrollada en Suiza en colaboración con el EPFL y el ETH para que cualquier país lo pueda adoptar. Es traído a México por un grupo de investigadores mexicanos con el fin de promover la participación activa de la ciudadanía en la lucha contra el virus.",

@@ -8,7 +8,7 @@
           <img src="img/partners/unam.png" style="height: 1.4rem;" alt="unam">
         </div>
       </router-link>
-       
+
       <div class="row" slot="content-header" slot-scope="{closeMenu}">
         <div class="col-8 collapse-brand">
           <img src="img/brand/logo_white_app.png" alt="logo"> {{ $t('app.title') }}
@@ -22,18 +22,38 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
 
         <li class="nav-item">
-          <router-link  class="nav-link text-nowrap" to="/">
-            {{ $t('app.landing') }}
+
+          <router-link class="nav-link" to="/report">
+            <button type="button" class="btn btn-dark btn-sm d-none d-lg-inline">
+              <i class="fa fa-send"></i>
+              {{ $t('report.title') }}
+            </button>
+            <span class="d-md-inline d-lg-none">
+              {{ $t('report.title') }}
+            </span>
           </router-link>
         </li>
 
         <li class="nav-item">
           <router-link class="nav-link" to="/faq">
-            {{ $t('faq.title') }}
+            <button type="button" class="btn btn-warning btn-sm d-none d-lg-inline">
+              <i class="fa fa-ambulance"></i>
+              {{ $t('faq.titleShort') }}
+            </button>
+            <span class="d-md-inline d-lg-none">
+              {{ $t('faq.titleShort') }}
+            </span>
+>>>>>>> a480e2461e2afa00415fc6387f7a349e04bfe1ba
           </router-link>
         </li>
 
+        <li class="nav-item">
+          <router-link  class="nav-link text-nowrap" to="/">
+            {{ $t('visualize.title') }}
+          </router-link>
+        </li>
 
+>>>>>>> a480e2461e2afa00415fc6387f7a349e04bfe1ba
         <li class="nav-item">
           <a v-if="redirectOrg" class="nav-link" :href="linkOrg" target="_blank">
             {{ $t('about.title') }}
