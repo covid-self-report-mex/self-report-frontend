@@ -19,7 +19,8 @@
             <base-button class="mb-3 mb-sm-0 d-block btn-block d-lg-none"
                          @click="$router.replace({ name: 'faq' })"
                          type="warning"
-                         icon="fa fa-ambulance">
+                         icon="fa fa-map"
+                         >
               {{ $t('faq.title') }}
             </base-button>
             <h1 class="display-4 text-white">{{ $t('visualize.map') }}</h1>
