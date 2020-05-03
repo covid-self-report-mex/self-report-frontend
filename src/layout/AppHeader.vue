@@ -43,7 +43,6 @@
             <span class="d-md-inline d-lg-none">
               {{ $t('faq.titleShort') }}
             </span>
->>>>>>> a480e2461e2afa00415fc6387f7a349e04bfe1ba
           </router-link>
         </li>
 
@@ -53,7 +52,6 @@
           </router-link>
         </li>
 
->>>>>>> a480e2461e2afa00415fc6387f7a349e04bfe1ba
         <li class="nav-item">
           <a v-if="redirectOrg" class="nav-link" :href="linkOrg" target="_blank">
             {{ $t('about.title') }}

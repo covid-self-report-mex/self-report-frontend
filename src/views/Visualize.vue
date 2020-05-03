@@ -141,7 +141,6 @@
             <!--            <p>{{totalReports}} reports overall</p>-->
 
           </div>
->>>>>>> a480e2461e2afa00415fc6387f7a349e04bfe1ba
 
     </div>
 </template>
