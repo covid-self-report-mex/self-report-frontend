@@ -15,7 +15,7 @@
               <base-button class="mb-3 mb-sm-0 d-block btn-block"
                            @click="openAirTable()"
                            type="warning"
-                           icon="fa fa-send">
+                           icon="fa fa-ambulance">
                 {{ $t('faq.register') }}
 
               </base-button>

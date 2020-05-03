@@ -36,7 +36,7 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/faq">
             <button type="button" class="btn btn-warning btn-sm d-none d-lg-inline">
-              <i class="fa fa-ambulance"></i>
+              <i class="fa fa-map"></i>
               {{ $t('faq.titleShort') }}
             </button>
             <span class="d-md-inline d-lg-none">
