@@ -1,92 +1,14 @@
 <template>
-    <div>
-        <div class="position-relative">
-            <!-- shape Hero -->
-            <section class="section-shaped my-0">
-                <div class="shape shape-style-2 shape-default shape-skew">
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="container shape-container d-flex" style="top: -8rem">
-                    <div class="col text-white">
-                        <p>
-                            <base-button class="mb-3 mb-sm-0 d-block btn-block mt-2"
-                                         @click="$router.replace({ name: 'report' })"
-                                         type="dark"
-                                         icon="fa fa-send">
-                                {{ $t('report.button') }}
-                            </base-button>
-                        </p>
-                        <base-alert v-if="error !== null" type="danger">
-                            <h5 class="text-white">Error</h5>
-                            <p v-html="error"></p>
-                        </base-alert>
+  <div>
 
-
-
-                        <h1 class="display-4 text-white">{{ $t('visualize.map') }}</h1>
-
-
-
-                        <base-button v-for="(layerDefinition) in layersDefinifion" :key="layerDefinition.id"
-                                     class="mb-3"
-                                     size="sm"
-                                     :type="layerDefinition.buttonColor"
-                                     :icon="`fa fa-${layerEnabled(layerDefinition) ? 'check-square' : 'square-o'}`"
-                                     @click="toggleLayer(layerDefinition)">
-                            <span>{{ $t(layerDefinition.label) }}</span>
-                        </base-button>
-
-                        <div>
-                            <div id="leaflet-map"></div>
-                            <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
-                        </div>
-                        <base-input addon-left-icon="ni ni-calendar-grid-58">
-                            <flat-picker v-if="dataLoaded"
-                                         slot-scope="{focus, blur}"
-                                         @on-open="focus"
-                                         @on-close="blur"
-                                         @on-change="buildLayers"
-                                         :config="datePickerFormat"
-                                         class="form-control datepicker"
-                                         v-model="dateFilter">
-                            </flat-picker>
-                        </base-input>
-                        <p>
-                            <base-button class="mb-3 mb-sm-0 d-block btn-block mt-2"
-                                         @click="$router.replace({ name: 'report' })"
-                                         type="dark"
-                                         icon="fa fa-send">
-                                {{ $t('report.button') }}
-                            </base-button>
-                            <base-button class="mb-sm-0 d-block btn-block mt-2"
-                                         @click="beforeEnter()"
-                                         type="danger"
-                                         icon="fa fa-heartbeat">
-                                {{ $t('acopio.register') }}
-                            </base-button>
-                        </p>
-                        <p>
-                            <base-button class="mb-3 mb-sm-0 d-block btn-block mt-2"
-                                         @click="$router.replace({ name: 'acopio' })"
-                                         type="success"
-                                         icon="fa fa-map">
-                                {{ $t('acopio.button') }}
-                            </base-button>
-                        </p>
-                        <p>
-                            {{ $t('visualize.dataWarning') }}
-
-                        </p>
-                        <!--            <p>{{totalReports}} reports overall</p>-->
-
-                    </div>
-
-                </div>
-            </section>
+    <div class="position-relative">
+      <!-- shape Hero -->
+      <section class="section-shaped my-0">
+        <div class="shape shape-style-2 shape-default shape-skew">
+          <span></span>
+          <span></span>
         </div>
-
-        <div class="container shape-container d-flex" style="top: -6rem">
+        <div class="container shape-container d-flex" style="top: -8rem">
 
           <div class="col text-white">
 
@@ -94,7 +16,12 @@
               <h5 class="text-white">Error</h5>
               <p v-html="error"></p>
             </base-alert>
-
+            <base-button class="mb-3 mb-sm-0 d-block btn-block d-lg-none"
+                         @click="$router.replace({ name: 'faq' })"
+                         type="warning"
+                         icon="fa fa-ambulance">
+              {{ $t('faq.title') }}
+            </base-button>
             <h1 class="display-4 text-white">{{ $t('visualize.map') }}</h1>
 
             <p>
@@ -106,7 +33,6 @@
                 {{ $t('report.title') }}
               </base-button>
             </p>
-
             <base-input addon-left-icon="ni ni-calendar-grid-58">
               <flat-picker v-if="dataLoaded"
                            slot-scope="{focus, blur}"
@@ -118,6 +44,11 @@
                            v-model="dateFilter">
               </flat-picker>
             </base-input>
+            <div>
+              <div id="leaflet-map"></div>
+              <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
+            </div>
+
 
             <base-button v-for="(layerDefinition) in layersDefinifion" :key="layerDefinition.id"
                          class="mb-3"
@@ -127,22 +58,15 @@
                          @click="toggleLayer(layerDefinition)">
               <span>{{ $t(layerDefinition.label) }}</span>
             </base-button>
-
-            <div>
-              <div id="leaflet-map"></div>
-              <p v-if="lastUpdate"><small>{{ $t('visualize.lastUpdate') }} {{ lastUpdate.toLocaleString() }}</small></p>
-            </div>
-            <base-button class="mb-3 mb-sm-0 d-block btn-block d-lg-none"
-                           @click="$router.replace({ name: 'faq' })"
-                           type="warning"
-                           icon="fa fa-ambulance">
-                {{ $t('faq.title') }}
-              </base-button>
             <!--            <p>{{totalReports}} reports overall</p>-->
 
           </div>
 
+        </div>
+      </section>
     </div>
+
+  </div>
 </template>
 
 <script>
@@ -153,7 +77,6 @@
 
     import flatPicker from 'vue-flatpickr-component';
     import 'flatpickr/dist/flatpickr.css';
-    import router from "../router";
 
     var _map = null;
     var _data = [];
@@ -281,8 +204,6 @@
             isDateAllowed: function (date) {
                 return this.allowedDates.includes(date);
             },
-            beforeEnter() { location.href = process.env.VUE_APP_AT },
-
             layerEnabled: function (layerDefinition) {
                 return this.activeLayers.includes(layerDefinition);
             },
@@ -501,11 +422,10 @@
                                 }).bindPopup(popup));
                             }
                         } catch (error) {
-                            console.error(entry, error);
+                            //console.error(entry, error);
                         }
                     }
                 }
-
 
                 const options = {
                     attribution: `<a href="${this.dataSourceUrl}" target="_blank">Origen de Datos</a>`,
@@ -537,16 +457,16 @@
 
 <style>
 
-    #leaflet-map {
-        height: 500px;
-        z-index: 1;
-        position: relative;
-    }
+  #leaflet-map {
+    height: 500px;
+    z-index: 1;
+    position: relative;
+  }
 
-    .data td:first-child {
-        font-weight: bold;
-        text-align: right;
-        margin-right: 15px;
-    }
+  .data td:first-child {
+    font-weight: bold;
+    text-align: right;
+    margin-right: 15px;
+  }
 
 </style>

@@ -3,7 +3,7 @@
     <base-nav class="navbar-main mt-lg-0 mt-3" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
         <div>
-          <img src="img/brand/logo_alpha.png" alt="logo"> {{ $t('app.title') }}
+          <img src="img/brand/logo_alpha.png" alt="logo"> <!-- {{ $t('app.title') }} Too long for phones -->
           <span class="ml-2 mr-1">+</span>
           <img src="img/partners/unam.png" style="height: 1.4rem;" alt="unam">
         </div>
@@ -22,7 +22,6 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
 
         <li class="nav-item">
-
           <router-link class="nav-link" to="/report">
             <button type="button" class="btn btn-dark btn-sm d-none d-lg-inline">
               <i class="fa fa-send"></i>
@@ -53,7 +52,7 @@
         </li>
 
         <li class="nav-item">
-          <a v-if="redirectOrg" class="nav-link" :href="linkOrg" target="_blank">
+          <a v-if="redirectOrg" class="nav-link" href="http://covid-self-report.org/">
             {{ $t('about.title') }}
           </a>
           <router-link v-else class="nav-link text-nowrap" :to="{ name: 'about' }">
