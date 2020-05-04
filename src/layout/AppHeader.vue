@@ -3,12 +3,12 @@
     <base-nav class="navbar-main mt-lg-0 mt-3" transparent type="" effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
         <div>
-          <img src="img/brand/logo_alpha.png" alt="logo"> {{ $t('app.title') }}
+          <img src="img/brand/logo_alpha.png" alt="logo"> <!-- {{ $t('app.title') }} Too long for phones -->
           <span class="ml-2 mr-1">+</span>
           <img src="img/partners/unam.png" style="height: 1.4rem;" alt="unam">
         </div>
       </router-link>
-       
+
       <div class="row" slot="content-header" slot-scope="{closeMenu}">
         <div class="col-8 collapse-brand">
           <img src="img/brand/logo_white_app.png" alt="logo"> {{ $t('app.title') }}
@@ -36,7 +36,7 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/faq">
             <button type="button" class="btn btn-warning btn-sm d-none d-lg-inline">
-              <i class="fa fa-ambulance"></i>
+              <i class="fa fa-map"></i>
               {{ $t('faq.titleShort') }}
             </button>
             <span class="d-md-inline d-lg-none">
@@ -50,7 +50,7 @@
             {{ $t('visualize.title') }}
           </router-link>
         </li>
-        
+
         <li class="nav-item">
           <a v-if="redirectOrg" class="nav-link" href="http://covid-self-report.org/">
             {{ $t('about.title') }}

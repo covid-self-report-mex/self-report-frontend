@@ -6,7 +6,7 @@ import AppFooter from "./layout/AppFooter";
 import Report from "./views/Report.vue";
 import Visualize from "./views/Visualize";
 import About from "./views/About";
-import Faq from "./views/Faq";
+import Faq from "./views/faq";
 
 Vue.use(Router);
 
@@ -32,7 +32,7 @@ export default new Router({
         default: Visualize,
         footer: AppFooter
       }
-    },    
+    },
     {
       path: "/faq",
       name: "faq",
