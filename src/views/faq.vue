@@ -46,7 +46,7 @@
         },
         methods:{
             openAirTable: function () {
-                window.open("https://airtable.com/shroRQ6P9z3gLxo0h/", "_blank");
+                window.open("https://airtable.com/shrRrXN7FmTxTc2xm/", "_blank");
             }
         }
     };
